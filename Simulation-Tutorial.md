@@ -285,30 +285,419 @@ save(tensor_data,x_group,file="Scenario3.RData")
 
 Perform Posterior Inference
 --------------------------------------
+Posterior computation under the dependent mixture of tensor factorizations requires the function `gibbs_tensor()` in the source file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R). This function implements the Gibbs sampler described in **Algorithm 1** of the paper, taking as inputs:
+- `Y_response`: an *nxp* matrix containing the values of the *p* categorical variables observed for the *n* units.
+- `x_predictor`: a vector with the group memberships for the *n* units.
+- `prior_model`: a list of the hyperparameters discussed in **Section 3.1** and the number of mixture components *H*.
+- `N_sampl`: the number of MCMC samples required.
+- `seed`: a seed to ensure reproducibility.
+The function `gibbs_tensor()` outputs the posterior samples for the parameters of the model described in **Section 2** of the paper.
 
-#### Scenario 1
+Let us perform posterior inference for the three simulations, and compute the posterior samples of the Cramer's V coefficient required for the local tests on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
 
-Description
-
-``` r
-
-```
-
-#### Scenario 2
-
-Description
-
-``` r
-
-```
-
-#### Scenario 3
-
-Description
+-----------
+### Scenario 1
+To perform posterior computation set a working directory containing the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R). Once this is done, clean the work space, and upload the source functions [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R) along with useful libraries, and the data.
 
 ``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
 
+load("Scenario1.RData")
 ```
+
+Let us now set the hyperparameters as in **Section 3** of the paper.
+``` r
+prior_model <- list(H=20, 
+a_dir_y=matrix(1/length(unique(c(tensor_data))),dim(tensor_data)[2],length(unique(c(tensor_data)))),
+a_dir_x=rep(1/length(unique(x_group)),length(unique(x_group))),
+p_H_0=0.5)
+```
+
+Based on these settings and the data, we can now perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+``` r
+fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
+save(fit, file="Posterior_samples_Scenario1.RData")
+```
+
+Once the MCMC samples for the parameters of the statistical model are available, we can compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory and upload useful data and samples.
+``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
+load("Scenario1.RData")
+load("Posterior_samples_Scenario1.RData")
+```
+
+As shown in equation (7) in **Section 2.1** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the marginals, we need to compute several functionals of our model. To do this, run the code below.
+``` r
+################################################################################
+#DEFINE USEFUL DIMENSIONS
+N_sampl <- dim(fit$pi_y_post)[4]
+H <- dim(fit$pi_y_post)[3]
+d_x <- dim(fit$pi_x_post)[1]
+d_y <- dim(fit$pi_y_post)[2]
+p <- dim(fit$pi_y_post)[1]
+n <- dim(tensor_data)[1]
+
+################################################################################
+#DEFINE USEFUL QUANTITIES
+nu <- fit$nu_post
+pi_y <- fit$pi_y_post
+pi_x <- fit$pi_x_post
+
+################################################################################
+#OBTAIN MARGINALS IN THE TWO GROUPS AND GLOBAL MARGINAL
+#-----------------------------------------------------------------------------#
+#Marginals two group
+pi_y_1 <- array(0,c(p,d_y,N_sampl))
+pi_y_2 <- array(0,c(p,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+for (h in 1:H){	
+pi_y_1[,,t] <- pi_y_1[,,t]+nu[1,h,t]*pi_y[,,h,t]
+pi_y_2[,,t] <- pi_y_2[,,t]+nu[2,h,t]*pi_y[,,h,t]	
+}	
+print(t)}
+
+#-----------------------------------------------------------------------------#
+#Global Marginal
+pi_y_marg <- array(0,c(p,d_y,N_sampl))
+for (t in 1:N_sampl){
+pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
+```
+Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+``` r
+test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
+save(test_marginal,file="Posterior_cramer_marginal_Scenario1.RData")
+```
+
+Similar steps are required to obtain the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. Hence, clean first the working directory and upload useful data and samples.
+``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
+load("Scenario1.RData")
+load("Posterior_samples_Scenario1.RData")
+```
+
+As shown in equation (8) in **Section 2.1** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the bivariates, we need to compute several functionals of our model. To do this, run the code below.
+``` r
+################################################################################
+#DEFINE USEFUL DIMENSIONS
+N_sampl <- dim(fit$pi_y_post)[4]
+H <- dim(fit$pi_y_post)[3]
+d_x <- dim(fit$pi_x_post)[1]
+d_y <- dim(fit$pi_y_post)[2]
+p <- dim(fit$pi_y_post)[1]
+n <- dim(tensor_data)[1]
+
+################################################################################
+#DEFINE USEFUL QUANTITIES
+nu <- fit$nu_post
+pi_y <- fit$pi_y_post
+pi_x <- fit$pi_x_post
+
+################################################################################
+#OBTAIN BIVARIATES IN THE TWO GROUPS AND GLOBAL BIVARIATE
+#-----------------------------------------------------------------------------#
+#Bivariate two groups
+pi_y_biv_1 <- array(0,c(p,p,d_y,d_y,N_sampl))
+pi_y_biv_2 <- array(0,c(p,p,d_y,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+for (j_1 in 1:p){
+for (j_2 in 1:p){
+for (h in 1:H){	
+pi_y_biv_1[j_1,j_2,,,t] <- pi_y_biv_1[j_1,j_2,,,t]+nu[1,h,t]*(pi_y[j_1,,h,t]%*%t(pi_y[j_2,,h,t]))
+pi_y_biv_2[j_1,j_2,,,t] <- pi_y_biv_2[j_1,j_2,,,t]+nu[2,h,t]*(pi_y[j_1,,h,t]%*%t(pi_y[j_2,,h,t]))}}}	
+print(t)}
+
+#-----------------------------------------------------------------------------#
+#Global Bivariate
+pi_y_biv <- array(0,c(p,p,d_y,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
+```
+Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+``` r
+test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
+save(test_bivariate,file="Posterior_cramer_bivariate_Scenario1.RData")
+```
+
+
+-----------
+### Scenario 2
+Posterior computation, and calculation of the posterior samples for the Cramer's V coefficients for the local tests proceed as in Scenario 1 above. Therefore:
+
+Clean workspace, and upload source functions and data.
+``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
+
+load("Scenario2.RData")
+```
+
+Set the hyperparameters.
+``` r
+prior_model <- list(H=20, 
+a_dir_y=matrix(1/length(unique(c(tensor_data))),dim(tensor_data)[2],length(unique(c(tensor_data)))),
+a_dir_x=rep(1/length(unique(x_group)),length(unique(x_group))),
+p_H_0=0.5)
+```
+
+Perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+``` r
+fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
+save(fit, file="Posterior_samples_Scenario2.RData")
+```
+
+Compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory and upload useful data and samples.
+``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
+load("Scenario2.RData")
+load("Posterior_samples_Scenario2.RData")
+```
+
+Obtain relevant functionals to compute the **Cramer's V coefficients for the tests on the marginals**
+``` r
+################################################################################
+#DEFINE USEFUL DIMENSIONS
+N_sampl <- dim(fit$pi_y_post)[4]
+H <- dim(fit$pi_y_post)[3]
+d_x <- dim(fit$pi_x_post)[1]
+d_y <- dim(fit$pi_y_post)[2]
+p <- dim(fit$pi_y_post)[1]
+n <- dim(tensor_data)[1]
+
+################################################################################
+#DEFINE USEFUL QUANTITIES
+nu <- fit$nu_post
+pi_y <- fit$pi_y_post
+pi_x <- fit$pi_x_post
+
+################################################################################
+#OBTAIN MARGINALS IN THE TWO GROUPS AND GLOBAL MARGINAL
+#-----------------------------------------------------------------------------#
+#Marginals two group
+pi_y_1 <- array(0,c(p,d_y,N_sampl))
+pi_y_2 <- array(0,c(p,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+for (h in 1:H){	
+pi_y_1[,,t] <- pi_y_1[,,t]+nu[1,h,t]*pi_y[,,h,t]
+pi_y_2[,,t] <- pi_y_2[,,t]+nu[2,h,t]*pi_y[,,h,t]	
+}	
+print(t)}
+
+#-----------------------------------------------------------------------------#
+#Global Marginal
+pi_y_marg <- array(0,c(p,d_y,N_sampl))
+for (t in 1:N_sampl){
+pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
+```
+Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+``` r
+test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
+save(test_marginal,file="Posterior_cramer_marginal_Scenario2.RData")
+```
+
+
+Compute the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. To do this, clean first the working directory and upload useful data and samples.
+``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
+load("Scenario2.RData")
+load("Posterior_samples_Scenario2.RData")
+```
+
+Obtain relevant functionals to compute the the **Cramer's V coefficients for the tests on the bivariates**.
+``` r
+################################################################################
+#DEFINE USEFUL DIMENSIONS
+N_sampl <- dim(fit$pi_y_post)[4]
+H <- dim(fit$pi_y_post)[3]
+d_x <- dim(fit$pi_x_post)[1]
+d_y <- dim(fit$pi_y_post)[2]
+p <- dim(fit$pi_y_post)[1]
+n <- dim(tensor_data)[1]
+
+################################################################################
+#DEFINE USEFUL QUANTITIES
+nu <- fit$nu_post
+pi_y <- fit$pi_y_post
+pi_x <- fit$pi_x_post
+
+################################################################################
+#OBTAIN BIVARIATES IN THE TWO GROUPS AND GLOBAL BIVARIATE
+#-----------------------------------------------------------------------------#
+#Bivariate two groups
+pi_y_biv_1 <- array(0,c(p,p,d_y,d_y,N_sampl))
+pi_y_biv_2 <- array(0,c(p,p,d_y,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+for (j_1 in 1:p){
+for (j_2 in 1:p){
+for (h in 1:H){	
+pi_y_biv_1[j_1,j_2,,,t] <- pi_y_biv_1[j_1,j_2,,,t]+nu[1,h,t]*(pi_y[j_1,,h,t]%*%t(pi_y[j_2,,h,t]))
+pi_y_biv_2[j_1,j_2,,,t] <- pi_y_biv_2[j_1,j_2,,,t]+nu[2,h,t]*(pi_y[j_1,,h,t]%*%t(pi_y[j_2,,h,t]))}}}	
+print(t)}
+
+#-----------------------------------------------------------------------------#
+#Global Bivariate
+pi_y_biv <- array(0,c(p,p,d_y,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
+```
+Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+``` r
+test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
+save(test_bivariate,file="Posterior_cramer_bivariate_Scenario2.RData")
+```
+
+
+
+-----------
+### Scenario 3
+Posterior computation, and calculation of the posterior samples for the Cramer's V coefficients for the local tests proceed as in Scenario 1 above. Therefore:
+
+Clean workspace, and upload source functions and data.
+``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
+
+load("Scenario3.RData")
+```
+
+Set the hyperparameters.
+``` r
+prior_model <- list(H=20, 
+a_dir_y=matrix(1/length(unique(c(tensor_data))),dim(tensor_data)[2],length(unique(c(tensor_data)))),
+a_dir_x=rep(1/length(unique(x_group)),length(unique(x_group))),
+p_H_0=0.5)
+```
+
+Perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+``` r
+fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
+save(fit, file="Posterior_samples_Scenario3.RData")
+```
+
+Compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory and upload useful data and samples.
+``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
+load("Scenario3.RData")
+load("Posterior_samples_Scenario3.RData")
+```
+
+Obtain relevant functionals to compute the **Cramer's V coefficients for the tests on the marginals**
+``` r
+################################################################################
+#DEFINE USEFUL DIMENSIONS
+N_sampl <- dim(fit$pi_y_post)[4]
+H <- dim(fit$pi_y_post)[3]
+d_x <- dim(fit$pi_x_post)[1]
+d_y <- dim(fit$pi_y_post)[2]
+p <- dim(fit$pi_y_post)[1]
+n <- dim(tensor_data)[1]
+
+################################################################################
+#DEFINE USEFUL QUANTITIES
+nu <- fit$nu_post
+pi_y <- fit$pi_y_post
+pi_x <- fit$pi_x_post
+
+################################################################################
+#OBTAIN MARGINALS IN THE TWO GROUPS AND GLOBAL MARGINAL
+#-----------------------------------------------------------------------------#
+#Marginals two group
+pi_y_1 <- array(0,c(p,d_y,N_sampl))
+pi_y_2 <- array(0,c(p,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+for (h in 1:H){	
+pi_y_1[,,t] <- pi_y_1[,,t]+nu[1,h,t]*pi_y[,,h,t]
+pi_y_2[,,t] <- pi_y_2[,,t]+nu[2,h,t]*pi_y[,,h,t]	
+}	
+print(t)}
+
+#-----------------------------------------------------------------------------#
+#Global Marginal
+pi_y_marg <- array(0,c(p,d_y,N_sampl))
+for (t in 1:N_sampl){
+pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
+```
+Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+``` r
+test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
+save(test_marginal,file="Posterior_cramer_marginal_Scenario3.RData")
+```
+
+
+Compute the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. To do this, clean first the working directory and upload useful data and samples.
+``` r
+rm(list=ls())
+library(gtools)
+source("Core_Functions.R")
+load("Scenario3.RData")
+load("Posterior_samples_Scenario3.RData")
+```
+
+Obtain relevant functionals to compute the the **Cramer's V coefficients for the tests on the bivariates**.
+``` r
+################################################################################
+#DEFINE USEFUL DIMENSIONS
+N_sampl <- dim(fit$pi_y_post)[4]
+H <- dim(fit$pi_y_post)[3]
+d_x <- dim(fit$pi_x_post)[1]
+d_y <- dim(fit$pi_y_post)[2]
+p <- dim(fit$pi_y_post)[1]
+n <- dim(tensor_data)[1]
+
+################################################################################
+#DEFINE USEFUL QUANTITIES
+nu <- fit$nu_post
+pi_y <- fit$pi_y_post
+pi_x <- fit$pi_x_post
+
+################################################################################
+#OBTAIN BIVARIATES IN THE TWO GROUPS AND GLOBAL BIVARIATE
+#-----------------------------------------------------------------------------#
+#Bivariate two groups
+pi_y_biv_1 <- array(0,c(p,p,d_y,d_y,N_sampl))
+pi_y_biv_2 <- array(0,c(p,p,d_y,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+for (j_1 in 1:p){
+for (j_2 in 1:p){
+for (h in 1:H){	
+pi_y_biv_1[j_1,j_2,,,t] <- pi_y_biv_1[j_1,j_2,,,t]+nu[1,h,t]*(pi_y[j_1,,h,t]%*%t(pi_y[j_2,,h,t]))
+pi_y_biv_2[j_1,j_2,,,t] <- pi_y_biv_2[j_1,j_2,,,t]+nu[2,h,t]*(pi_y[j_1,,h,t]%*%t(pi_y[j_2,,h,t]))}}}	
+print(t)}
+
+#-----------------------------------------------------------------------------#
+#Global Bivariate
+pi_y_biv <- array(0,c(p,p,d_y,d_y,N_sampl))
+
+for (t in 1:N_sampl){
+pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
+```
+Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+``` r
+test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
+save(test_bivariate,file="Posterior_cramer_bivariate_Scenario3.RData")
+```
+
 
 Reproduce Figure 2 in the Paper
 --------------------------------------
