@@ -701,4 +701,117 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Scenario3.RData")
 
 Reproduce Figure 2 in the Paper
 --------------------------------------
+To reproduce Figure 2 in the paper, clean first the working directory and upload useful libraries.
+``` r
+rm(list=ls())
+library(gtools)
+library(coda)
+library(gdata)
+library(reshape)
+library(ggplot2)
+library(RColorBrewer)
+library(gridExtra)
+source("Core_Functions.R")
+```
+Once these preliminary operations are made, load the posterior samples of the Cramer's V coefficients for the local tests previously obtained under the three scenarios.
+``` r
+#--------------------------------------------------------------------------------
+#SCENARIO 1
+load("Posterior_cramer_marginal_Scenario1.RData")
+load("Posterior_cramer_bivariate_Scenario1.RData")
+
+cramer_marginal1 <- test_marginal$cramer_margin
+cramer_bivariate1 <- test_bivariate$cramer_bivariate
+
+#--------------------------------------------------------------------------------
+#SCENARIO 2
+load("Posterior_cramer_marginal_Scenario2.RData")
+load("Posterior_cramer_bivariate_Scenario2.RData")
+
+cramer_marginal2 <- test_marginal$cramer_margin
+cramer_bivariate2 <- test_bivariate$cramer_bivariate
+
+#--------------------------------------------------------------------------------
+#SCENARIO 3
+load("Posterior_cramer_marginal_Scenario3.RData")
+load("Posterior_cramer_bivariate_Scenario3.RData")
+
+cramer_marginal3 <- test_marginal$cramer_margin
+cramer_bivariate3 <- test_bivariate$cramer_bivariate
+```
+Let us also set useful quantities, including the **burn-in** of the MCMC chains
+``` r
+p <- dim(cramer_marginal1)[1]
+MCMC_sample <- dim(cramer_marginal1)[2]
+MCMC_burn <- 1001
+```
+Once this has been done, the `ggplot` code to reproduce the results for the test on the bivariates—representing the lower panels in Figure 2—is provided below.
+``` r
+matr_1 <- matrix(0,p,p)
+lowerTriangle(matr_1) <- lowerTriangle(apply(cramer_bivariate1[,,MCMC_burn:MCMC_sample]>0.2,c(1,2),mean))
+matr_1 <- matr_1+t(matr_1)
+diag(matr_1) <- NA
+matr.dat1 <- melt(matr_1)
+matr.dat1 <- matr.dat1[-which(is.na(matr.dat1[, 3])),]
+matr.dat1 <- data.frame(matr.dat1)
+matr.dat1$X1 <- factor(matr.dat1$X1,levels=rev(c(1:p)))
+matr.dat1$X1 <- droplevels(matr.dat1$X1)
+matr.dat1$X2 <- factor(matr.dat1$X2)
+matr.dat1$flag <- cut(matr.dat1$value,breaks=c(-Inf,0.95,Inf),labels=c("","x"))
+
+matr_2 <- matrix(0,p,p)
+lowerTriangle(matr_2) <- lowerTriangle(apply(cramer_bivariate2[,,MCMC_burn:MCMC_sample]>0.2,c(1,2),mean))
+matr_2 <- matr_2+t(matr_2)
+diag(matr_2) <- NA
+matr.dat2 <- melt(matr_2)
+matr.dat2 <- matr.dat2[-which(is.na(matr.dat2[, 3])),]
+matr.dat2 <- data.frame(matr.dat2)
+matr.dat2$X1 <- factor(matr.dat2$X1,levels=rev(c(1:p)))
+matr.dat2$X1 <- droplevels(matr.dat2$X1)
+matr.dat2$X2 <- factor(matr.dat2$X2)
+matr.dat2$flag <- cut(matr.dat2$value,breaks=c(-Inf,0.95,Inf),labels=c("","x"))
+
+matr_3 <- matrix(0,p,p)
+lowerTriangle(matr_3) <- lowerTriangle(apply(cramer_bivariate3[,,MCMC_burn:MCMC_sample]>0.2,c(1,2),mean))
+matr_3 <- matr_3+t(matr_3)
+diag(matr_3) <- NA
+matr.dat3 <- melt(matr_3)
+matr.dat3 <- matr.dat3[-which(is.na(matr.dat3[, 3])),]
+matr.dat3 <- data.frame(matr.dat3)
+matr.dat3$X1 <- factor(matr.dat3$X1,levels=rev(c(1:p)))
+matr.dat3$X1 <- droplevels(matr.dat3$X1)
+matr.dat3$X2 <- factor(matr.dat3$X2)
+matr.dat3$flag <- cut(matr.dat3$value,breaks=c(-Inf,0.95,Inf),labels=c("","x"))
+
+matr.dat <-r bind(matr.dat1,matr.dat2,matr.dat3)
+matr.dat$g1 <- (c(rep("'SCENARIO 1.  Estimated pr('~rho[jj*minute]>0.2~')'",dim(matr.dat)[1]/3),rep("'SCENARIO 2.  Estimated pr('~rho[jj*minute]>0.2~')'",dim(matr.dat)[1]/3),rep("'SCENARIO 3.  Estimated pr('~rho[jj*minute]>0.2~')'",dim(matr.dat)[1]/3)))
+
+Bivariate <- ggplot(matr.dat, aes(X2, X1, fill = value)) +   geom_tile(color="grey") +  scale_fill_gradientn(colors=brewer.pal(9,"Greys")) +  scale_x_discrete()  +  labs(x = "", y = "") +theme_bw()+facet_wrap(~g1, labeller = label_parsed,ncol=3)+ theme(axis.text.x = element_text(size=6.5),axis.text.y = element_text(size=6.5))+ theme(legend.title=element_blank(),plot.margin=unit(c(0.1,0.1,-0.3,-0.3), "cm"),panel.background = element_rect(fill = brewer.pal(9,"Greys")[2]) )+geom_text(aes(label=flag), color="white", size=3)
+```
+
+The `ggplot` code to reproduce the results for the test on the marginals—representing the uppers panels in Figure 2—is instead provided below.
+``` r
+marg_1 <- data.frame(melt(apply(cramer_marginal1[,MCMC_burn:MCMC_sample]>0.2,1,mean)))
+marg_1$var <- c(1:p)
+#just for aestetical reasons
+marg_1$value <- marg_1$value+0.005
+
+marg_2 <- data.frame(melt(apply(cramer_marginal2[,MCMC_burn:MCMC_sample]>0.2,1,mean)))
+marg_2$var <- c(1:p)
+
+marg_3 <- data.frame(melt(apply(cramer_marginal3[,MCMC_burn:MCMC_sample]>0.2,1,mean)))
+marg_3$var <- c(1:p)
+marg_3$value <- marg_3$value+0.005
+
+matr.dat <- rbind(marg_1,marg_2,marg_3)
+matr.dat$g1 <- (c(rep("'SCENARIO 1.  Estimated pr('~rho[j]>0.2~')'",dim(matr.dat)[1]/3),rep("'SCENARIO 2.  Estimated pr('~rho[j]>0.2~')'",dim(matr.dat)[1]/3),rep("'SCENARIO 3.  Estimated pr('~rho[j]>0.2~')'",dim(matr.dat)[1]/3)))
+
+
+Margin <- ggplot(matr.dat, aes(factor(var),y=value,fill=value)) + geom_bar(stat="identity",colour="black",size=0.3)+  scale_fill_gradientn(colors=brewer.pal(9,"Greys")[2:9]) +  labs(x = "", y = "") +theme_bw() +facet_wrap(~g1, labeller = label_parsed,ncol=3)+ theme(axis.text.x = element_text(size=6.5),axis.text.y = element_text(size=6.5))+ theme(legend.title=element_blank(),plot.margin=unit(c(0.1,0.1,0.1,-0.3), "cm") )+ geom_hline(yintercept = 0.95,color="gray",,linetype=2)
+```
+Finally, joining the plots `Bivariate` and `Margin` via
+``` r
+grid.arrange(Margin,Bivariate,ncol=1)
+```
+provides the Figure below.
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/simulation.jpg)
