@@ -237,7 +237,7 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Application.RData")
 
 Reproduce Figures 3 and 4 in the Paper
 --------------------------------------
-To reproduce **Figure 3** in the paper, clean first the working directory and upload useful libraries.
+To reproduce **Figure 4** in the paper, clean first the working directory and upload useful libraries.
 
 ``` r
 rm(list=ls())
@@ -346,7 +346,68 @@ Bivariate
 ```
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app.jpg)
 
+To obtain **Figure 3** in the paper, we require the posterior distributions of the probability mass functions for the *p* in each of the two groups of voters. These posterior samples associated with these quantities are stored in `Posterior_cramer_marginal_Application.RData`. Hence load these samples and set useful quantities.
 
+``` r
+load("Posterior_cramer_marginal_Application.RData")
+cramer_marginal <- test_marginal$cramer_margin
+pi_y_1 <- test_marginal$pi_y_1
+pi_y_2 <- test_marginal$pi_y_2
+
+p <- dim(cramer_marginal)[1]
+MCMC_sample <- dim(cramer_marginal)[2]
+MCMC_burn <- 1001
+```
+
+To obtain **Figure 3** let us also create a function `plot_function()` which outputs the graphical quantities required by `ggplot`.
+
+``` r
+plot_function <- function(j_var,marginal_1,marginal_2,burn_in,Gibbs_samples){
+marg <- data.frame(melt(apply(marginal_1[j_var,,burn_in:Gibbs_samples]-marginal_2[j_var,,burn_in:Gibbs_samples],1,mean)))
+marg$up <- NA
+marg$low <- NA
+marg$up <- c(apply(marginal_1[j_var,,burn_in:Gibbs_samples]-marginal_2[j_var,,burn_in:Gibbs_samples],1,quantile,probs=0.975))
+marg$low <- c(apply(marginal_1[j_var,,burn_in:Gibbs_samples]-marginal_2[j_var,,burn_in:Gibbs_samples],1,quantile,probs=0.025))
+marg$var <- c(1:5)
+return(marg)}
+```
+
+Leveraging this function, the `ggplot` code to reproduce the first panel in **Figure 3**—describing group differences in **feelings** toward Hillary Clinton and Donald Trump—is provided below.
+
+``` r
+matr.dat <- plot_function(1,pi_y_1,pi_y_2,MCMC_burn,MCMC_sample)
+for (j in 2:10){
+matr.dat <- rbind(matr.dat,plot_function(j,pi_y_1,pi_y_2,MCMC_burn,MCMC_sample))}
+
+matr.dat$g1 <- factor(c(rep("'Hillary'",dim(matr.dat)[1]/2),rep("'Trump'",dim(matr.dat)[1]/2)),levels=c("'Hillary'","'Trump'"))
+
+matr.dat$g2 <- factor(c(rep("'Angry'",5),rep("'Hopeful'",5),rep("'Afraid'",5),rep("'Proud'",5),rep("'Disgusted'",5),rep("'Angry'",5),rep("'Hopeful'",5),rep("'Afraid'",5),rep("'Proud'",5),rep("'Disgusted'",5)),levels=c("'Angry'","'Hopeful'","'Afraid'","'Proud'","'Disgusted'"))
+
+lab <- c("Never","Sometime","Half times","Most times","Always")
+
+marg_plot1 <- ggplot(matr.dat, aes(factor(var), y = value,fill=(value))) + geom_bar(stat="identity",position=position_dodge(),colour="black",size=0.3)+geom_errorbar(aes(ymin=low, ymax=up), width=.2,position=position_dodge(0.9),alpha=0.5)+  scale_fill_gradientn(colors=brewer.pal(9, "Greys")[2]) +  labs(x = "", y = "") + scale_x_discrete(labels=lab) +theme_bw() +facet_grid(g1~g2,labeller = label_parsed) + theme(legend.title=element_blank(),legend.position="none",legend.direction="horizontal",plot.margin=unit(c(0.1,0.1,-0.2,-0.3), "cm"))+ theme(axis.text.x = element_text(angle=45,vjust=1,hjust=1,size=8))
+
+marg_plot1
+``` 
 
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app_marg1.jpg)
+
+The `ggplot` code to reproduce the second panel in **Figure 3**—describing group differences in **opinions** on Hillary Clinton and Donald Trump personality traits—is provided below.
+
+``` r
+matr.dat <- plot_function(11,pi_y_1,pi_y_2,MCMC_burn,MCMC_sample)
+for (j in 12:20){
+matr.dat <- rbind(matr.dat,plot_function(j,pi_y_1,pi_y_2,MCMC_burn,MCMC_sample))}
+
+matr.dat$g1 <- factor(c(rep("'Hillary'",dim(matr.dat)[1]/2),rep("'Trump'",dim(matr.dat)[1]/2)),levels=c("'Hillary'","'Trump'"))
+
+matr.dat$g2 <- factor(c(rep("'Leadership'",5),rep("'Cares'",5),rep("'Knowledgeable'",5),rep("'Honest'",5),rep("'Speaks Mind'",5),rep("'Leadership'",5),rep("'Cares'",5),rep("'Knowledgeable'",5),rep("'Honest'",5),rep("'Speaks Mind'",5)),levels=c("'Leadership'","'Cares'","'Knowledgeable'","'Honest'","'Speaks Mind'"))
+
+lab <- c("Extr. well","Very well","Moder. well","Slight. well","Not well")
+
+marg_plot2 <- ggplot(matr.dat, aes(factor(var), y = value,fill=(value))) + geom_bar(stat="identity",position=position_dodge(),colour="black",size=0.3)+geom_errorbar(aes(ymin=low, ymax=up), width=.2,position=position_dodge(0.9),alpha=0.5)+  scale_fill_gradientn(colors=brewer.pal(9, "Greys")[2]) + labs(x = "", y = "") + scale_x_discrete(labels=lab) +theme_bw() +facet_grid(g1~g2,labeller = label_parsed) + theme(legend.title=element_blank(),legend.position="none",legend.direction="horizontal",plot.margin=unit(c(0.1,0.1,-0.2,-0.3), "cm")) + theme(axis.text.x = element_text(angle=45,vjust=1,hjust=1,size=8))
+
+marg_plot2
+``` 
+
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app_marg2.jpg)
