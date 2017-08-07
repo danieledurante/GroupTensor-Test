@@ -237,6 +237,116 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Application.RData")
 
 Reproduce Figures 3 and 4 in the Paper
 --------------------------------------
+To reproduce **Figure 3** in the paper, clean first the working directory and upload useful libraries.
+
+``` r
+rm(list=ls())
+library(gtools)
+library(coda)
+library(gdata)
+library(reshape)
+library(ggplot2)
+library(RColorBrewer)
+library(gridExtra)
+source("Core_Functions.R")
+```
+
+Once these preliminary operations are made, load the **posterior samples of the Cramer's V coefficients for the tests on the bivariates** previously obtained for our application.
+
+``` r
+load("Political.RData")
+load("Posterior_cramer_bivariate_Application.RData")
+```
+
+To obtain informative figures let us introduce labels for the different feelings and opinions on Hillary Clinton and Donald Trump.
+
+``` r
+labels_var <- c("Clinton: angry", "Clinton: hopeful", "Clinton: afraid", "Clinton: proud", "Clinton: disgusted",
+                "Trump: angry", "Trump: hopeful", "Trump: afraid", "Trump: proud",  "Trump: disgusted",
+                "Clinton: leadership", "Clinton: cares", "Clinton: knowledgeable", "Clinton: honest", "Clinton: speaks mind",                 "Trump: leadership", "Trump: cares", "Trump: knowledgeable", "Trump: honest", "Trump: speaks mind")
+```
+
+We additionally re-order the original variables to provide more informative comparisons.
+
+``` r
+relable <- c(1:5,11:15,6:10,16:20)
+labels_var <- labels_var[relable]
+cramer_bivariate <- test_bivariate$cramer_bivariate
+```
+
+Let us know define a vector of indicators denoting which pairs of variables are found to change across groups according to posterior distribution of the corresponding Cramer's V coefficients.
+
+``` r
+p <- dim(cramer_bivariate)[1]
+MCMC_sample <- dim(cramer_bivariate)[3]
+MCMC_burn <- 1001
+
+cramer_probabilities <- (apply(cramer_bivariate[,,MCMC_burn:MCMC_sample]>0.2,c(1,2),mean))
+cramer_probabilities <- cramer_probabilities+t(cramer_probabilities)
+diag(cramer_probabilities) <- NA
+cramer_probabilities <- cramer_probabilities[relable,]
+cramer_probabilities <- cramer_probabilities[,relable]
+cramer_probabilities <- melt(cramer_probabilities)
+cramer_probabilities <- cramer_probabilities[-which(is.na(cramer_probabilities[, 3])),]
+cramer_probabilities <- cramer_probabilities$value
+```
+Once this has been done, the `ggplot` code to reproduce the results for the test on the bivariates in **Figure 4**, is provided below.
+
+``` r
+matr_1 <- matrix(0,p,p)
+lowerTriangle(matr_1) <- lowerTriangle(apply(cramer_bivariate[,,MCMC_burn:MCMC_sample],c(1,2),quantile,probs=0.025))
+matr_1 <- matr_1+t(matr_1)
+diag(matr_1) <- NA
+matr_1 <- matr_1[relable,]
+matr_1 <- matr_1[,relable]
+matr.dat1 <- melt(matr_1)
+matr.dat1 <- matr.dat1[-which(is.na(matr.dat1[, 3])),]
+matr.dat1 <- data.frame(matr.dat1)
+matr.dat1$X1 <- factor(matr.dat1$X1,levels=rev(c(1:p)))
+matr.dat1$X1 <- droplevels(matr.dat1$X1)
+matr.dat1$X2 <- factor(matr.dat1$X2)
+matr.dat1$flag <- cut(cramer_probabilities,breaks=c(-Inf,0.95,Inf),labels=c("","x"))
+
+matr_2 <- matrix(0,p,p)
+lowerTriangle(matr_2) <- lowerTriangle(apply(cramer_bivariate[,,MCMC_burn:MCMC_sample],c(1,2),mean))
+matr_2 <- matr_2+t(matr_2)
+diag(matr_2) <- NA
+matr_2 <- matr_2[relable,]
+matr_2 <- matr_2[,relable]
+matr.dat2 <- melt(matr_2)
+matr.dat2 <- matr.dat2[-which(is.na(matr.dat2[, 3])),]
+matr.dat2 <- data.frame(matr.dat2)
+matr.dat2$X1 <- factor(matr.dat2$X1,levels=rev(c(1:p)))
+matr.dat2$X1 <- droplevels(matr.dat2$X1)
+matr.dat2$X2 <- factor(matr.dat2$X2)
+matr.dat2$flag <- cut(cramer_probabilities,breaks=c(-Inf,0.95,Inf),labels=c("","x"))
+
+matr_3 <- matrix(0,p,p)
+lowerTriangle(matr_3) <- lowerTriangle(apply(cramer_bivariate[,,MCMC_burn:MCMC_sample],c(1,2),quantile,probs=0.975))
+matr_3 <- matr_3+t(matr_3)
+diag(matr_3) <- NA
+matr_3 <- matr_3[relable,]
+matr_3 <- matr_3[,relable]
+matr.dat3 <- melt(matr_3)
+matr.dat3 <- matr.dat3[-which(is.na(matr.dat3[, 3])),]
+matr.dat3 <- data.frame(matr.dat3)
+matr.dat3$X1 <- factor(matr.dat3$X1,levels=rev(c(1:p)))
+matr.dat3$X1 <- droplevels(matr.dat3$X1)
+matr.dat3$X2 <- factor(matr.dat3$X2)
+matr.dat3$flag <- cut(cramer_probabilities,breaks=c(-Inf,0.95,Inf),labels=c("","x"))
+
+matr.dat <- rbind(matr.dat1,matr.dat2,matr.dat3)
+matr.dat$g1 <- (c(rep("'Posterior 0.025 quantile of'~rho[jj*minute]",dim(matr.dat)[1]/3),rep("'Posterior mean of'~rho[jj*minute]",dim(matr.dat)[1]/3),rep("'Posterior 0.975 quantile of'~rho[jj*minute]",dim(matr.dat)[1]/3)))
+matr.dat$g1 <- factor(matr.dat$g1,levels=c("'Posterior 0.025 quantile of'~rho[jj*minute]","'Posterior mean of'~rho[jj*minute]","'Posterior 0.975 quantile of'~rho[jj*minute]"))
+
+
+Bivariate <- ggplot(matr.dat, aes(X2, X1, fill = value)) + geom_tile(color="grey") +  scale_fill_gradientn(colors=brewer.pal(9,"Greys")) + scale_x_discrete(labels=labels_var) +  scale_y_discrete(labels=labels_var[20:1]) + labs(x = "", y = "") +theme_bw()+facet_wrap(~g1, labeller = label_parsed,ncol=3)+ theme(axis.text.x = element_text(angle=90,vjust=0.4,hjust=1,size=6.5),axis.text.y = element_text(size=6.5))+ theme(legend.title=element_blank(),legend.position=c(.5, 1.24),legend.direction="horizontal",plot.margin=unit(c(1.3,0.1,-0.3,-0.3), "cm"),panel.background = element_rect(fill = brewer.pal(9,"Greys")[2]) )+ geom_text(aes(label=flag), color="white", size=2)
+
+Bivariate
+```
+![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app.jpg)
+
+
+
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app_marg1.jpg)
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app_marg2.jpg)
-![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app.jpg)
