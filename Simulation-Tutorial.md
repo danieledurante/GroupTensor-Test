@@ -42,11 +42,13 @@ sel_joint <- c(1,5,10,12,15)
 ```
 
 We now create the probability mass functions required to generate the data consistent with the aforementioned generative process. In particular, the **grouping variable** is generated from a binary random variable with equal probabilities.
+
 ``` r
 pi_X_0 <- c(0.5,0.5)
 ```
 
 The **variables generated from independent multinomials** simply require their marginal probability mass functions to be simulated. We define these quantities in a *px4* matrix `pi_Y_0_multinom` containing the marginal probabilities for all the *p* variables. Note that, consistent with the generative mechanisms for the variables simulated from the joint probability mass function, their marginals will be equal to *(0.25,0.25,0.25,0.25)*.
+
 ``` r
 pi_Y_0_multinom <- matrix(0.25,15,4)
 for (j in 1:length(sel_indep_multinom)){
@@ -73,6 +75,7 @@ pi_Y_0_multinom
 
 
 Finally, the **variables generated from the joint probability mass function** require a specification for all the probabilities of the different configurations. 
+
 ``` r
 pi_Y_0_joint <- array(0.6/(4^5-4),c(rep(4,5)))
 pi_Y_0_joint[1,1,1,1,1] <- 0.1
@@ -102,17 +105,21 @@ tail(vec_pi_Y_0_joint)
  ## [1024,]  4  4  4  4  4 0.1000000000
 ```
 
-Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`
+Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`.
+
 ``` r
 n <- 400
 p <- 15
 ```
 
 - The **grouping variable *X*** is generated from a binary random variable. **Note that** the simulated groups are kept the same in all the three simulation scenarios, and therefore will be simulated only once.
+
 ``` r
 x_group <- sample(c(1:2),n,replace=TRUE,prob=pi_X_0)
 ```
+
 - As discussed before, to simulate the **multivariate categorical random variable *Y***, part of the variables are generated from independent multinomials, whereas the remaining variables come from the joint probability mass function previously defined.
+
 ``` r
 tensor_data <- matrix(0,n,p)
 
@@ -124,9 +131,11 @@ tensor_data[i,sel_joint] <- c(vec_pi_Y_0_joint[sample(c(1:dim(vec_pi_Y_0_joint [
 ```
 
 Finally let us **save** the simulated data in **Scenario 1**.
+
 ``` r
 save(tensor_data,x_group,file="Scenario1.RData")
 ```
+
 -----------
 ### Scenario 2
 
@@ -168,6 +177,7 @@ pi_Y_0_multinom_2[sel_indep_multinom_2[j],] <- c(0.05,0.05,0.45,0.45)}
 ```
 
 Finally, the **variables generated from the joint probability mass function** require a specification for all the probabilities of the different configurations. This setting is the same as in Scenario 1.
+
 ``` r
 pi_Y_0_joint <- array(0.6/(4^5-4),c(rep(4,5)))
 pi_Y_0_joint[1,1,1,1,1] <- 0.1
@@ -179,7 +189,8 @@ pi_Y_0_joint[4,4,4,4,4] <- 0.1
 vec_pi_Y_0_joint <- as.matrix(melt(pi_Y_0_joint))
 ```
 
-Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`
+Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`.
+
 ``` r
 n <- 400
 p <- 15
@@ -187,6 +198,7 @@ p <- 15
 
 The **grouping variable *X*** has been already simulated in Scenario 1. The **multivariate categorical random variable *Y***, are instead simulated according to the above description for the Scenario 2. In particular:
 - Simulate the variables generated from independent multinomials not varying with groups.
+
 ``` r
 tensor_data <- matrix(0,n,p)
 
@@ -194,7 +206,9 @@ for (i in 1:n){
 for (j in 1:(length(sel_indep_multinom_1))){
 tensor_data[i,sel_indep_multinom_1[j]] <- sample(c(1:4),1,replace=TRUE,prob=pi_Y_0_multinom_1[sel_indep_multinom_1[j],])}}
 ```
+
 - Simulate the variables with indices in `sel_joint` as in Scenario 1 for group *X=1*, and from independent multinomials with probability mass function *(0.25,0.25,0.25,0.25)* in group *X=2*. 
+
 ``` r
 for (i in 1:n){
 if (x_group[i]==1){		
@@ -202,7 +216,9 @@ tensor_data[i,sel_joint]<-c(vec_pi_Y_0_joint[sample(c(1:dim(vec_pi_Y_0_joint)[1]
 for (j in 1:(length(sel_joint))){
 tensor_data[i,sel_joint[j]]<-sample(c(1:4),1,replace=TRUE,prob=pi_Y_0_multinom_1[sel_joint[j],])}}}
 ```
+
 - Simulate the variables 2 and 8 generated from independent multinomials varying with groups.
+
 ``` r
 for (i in 1:n){
 if (x_group[i]==1){	
@@ -214,6 +230,7 @@ tensor_data[i,sel_indep_multinom_2[j]]<-sample(c(1:4),1,replace=TRUE,prob=pi_Y_0
 ```
 
 Finally let us **save** the simulated data in **Scenario 2**.
+
 ``` r
 save(tensor_data,x_group,file="Scenario2.RData")
 ```
@@ -246,6 +263,7 @@ We now create the probability mass functions required to generate the data consi
 The **variables generated from independent multinomials** simply require their marginal probability mass functions to be simulated. These marginal probabilities are the same as in Scenario 1, and therefore can be found in the matrix `pi_Y_0_multinom`. Note that, consistent with the generative mechanisms for the variables simulated from the joint probability mass function, their marginals will be equal to *(0.25,0.25,0.25,0.25)*.
 
 The **variables generated from the joint probability mass function** require a specification for all the probabilities of the different configurations. This setting is the same as in Scenario 1.
+
 ``` r
 pi_Y_0_joint <- array(0.6/(4^5-4),c(rep(4,5)))
 pi_Y_0_joint[1,1,1,1,1] <- 0.1
@@ -257,13 +275,15 @@ pi_Y_0_joint[4,4,4,4,4] <- 0.1
 vec_pi_Y_0_joint <- as.matrix(melt(pi_Y_0_joint))
 ```
 
-Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`
+Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`.
+
 ``` r
 n <- 400
 p <- 15
 ```
 
 The **grouping variable *X*** has been already simulated in Scenario 1. The **multivariate categorical random variable *Y***, are instead simulated according to the above description for the Scenario 3. In particular:
+
 ``` r
 tensor_data <- matrix(0,n,p)
 
@@ -278,6 +298,7 @@ tensor_data[i,sel_joint]<-c(vec_pi_Y_0_joint[sample(c(1:dim(vec_pi_Y_0_joint)[1]
 ```
 
 Finally let us **save** the simulated data in **Scenario 3**.
+
 ``` r
 save(tensor_data,x_group,file="Scenario3.RData")
 ```
@@ -308,6 +329,7 @@ load("Scenario1.RData")
 ```
 
 Let us now set the hyperparameters as in **Section 3** of the paper.
+
 ``` r
 prior_model <- list(H=20, 
 a_dir_y=matrix(1/length(unique(c(tensor_data))),dim(tensor_data)[2],length(unique(c(tensor_data)))),
@@ -316,12 +338,14 @@ p_H_0=0.5)
 ```
 
 Based on these settings and the data, we can now perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+
 ``` r
 fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
 save(fit, file="Posterior_samples_Scenario1.RData")
 ```
 
 Once the MCMC samples for the parameters of the statistical model are available, we can compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory and upload useful data and samples.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -331,6 +355,7 @@ load("Posterior_samples_Scenario1.RData")
 ```
 
 As shown in equation (7) in **Section 2.1** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the marginals, we need to compute several functionals of our model. To do this, run the code below.
+
 ``` r
 ################################################################################
 #DEFINE USEFUL DIMENSIONS
@@ -367,13 +392,16 @@ pi_y_marg <- array(0,c(p,d_y,N_sampl))
 for (t in 1:N_sampl){
 pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
 ```
+
 Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+
 ``` r
 test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
 save(test_marginal,file="Posterior_cramer_marginal_Scenario1.RData")
 ```
 
 Similar steps are required to obtain the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. Hence, clean first the working directory and upload useful data and samples.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -383,6 +411,7 @@ load("Posterior_samples_Scenario1.RData")
 ```
 
 As shown in equation (8) in **Section 2.1** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the bivariates, we need to compute several functionals of our model. To do this, run the code below.
+
 ``` r
 ################################################################################
 #DEFINE USEFUL DIMENSIONS
@@ -421,18 +450,20 @@ pi_y_biv <- array(0,c(p,p,d_y,d_y,N_sampl))
 for (t in 1:N_sampl){
 pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
 ```
+
 Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+
 ``` r
 test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
 save(test_bivariate,file="Posterior_cramer_bivariate_Scenario1.RData")
 ```
-
 
 -----------
 ### Scenario 2
 Posterior computation, and calculation of the posterior samples for the Cramer's V coefficients for the local tests proceed as in Scenario 1 above. Therefore:
 
 Clean workspace, and upload source functions and data.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -442,6 +473,7 @@ load("Scenario2.RData")
 ```
 
 Set the hyperparameters.
+
 ``` r
 prior_model <- list(H=20, 
 a_dir_y=matrix(1/length(unique(c(tensor_data))),dim(tensor_data)[2],length(unique(c(tensor_data)))),
@@ -450,12 +482,14 @@ p_H_0=0.5)
 ```
 
 Perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+
 ``` r
 fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
 save(fit, file="Posterior_samples_Scenario2.RData")
 ```
 
 Compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory and upload useful data and samples.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -464,7 +498,8 @@ load("Scenario2.RData")
 load("Posterior_samples_Scenario2.RData")
 ```
 
-Obtain relevant functionals to compute the **Cramer's V coefficients for the tests on the marginals**
+Obtain relevant functionals to compute the **Cramer's V coefficients for the tests on the marginals**.
+
 ``` r
 ################################################################################
 #DEFINE USEFUL DIMENSIONS
@@ -501,14 +536,16 @@ pi_y_marg <- array(0,c(p,d_y,N_sampl))
 for (t in 1:N_sampl){
 pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
 ```
+
 Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+
 ``` r
 test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
 save(test_marginal,file="Posterior_cramer_marginal_Scenario2.RData")
 ```
 
-
 Compute the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. To do this, clean first the working directory and upload useful data and samples.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -518,6 +555,7 @@ load("Posterior_samples_Scenario2.RData")
 ```
 
 Obtain relevant functionals to compute the the **Cramer's V coefficients for the tests on the bivariates**.
+
 ``` r
 ################################################################################
 #DEFINE USEFUL DIMENSIONS
@@ -556,19 +594,20 @@ pi_y_biv <- array(0,c(p,p,d_y,d_y,N_sampl))
 for (t in 1:N_sampl){
 pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
 ```
+
 Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+
 ``` r
 test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
 save(test_bivariate,file="Posterior_cramer_bivariate_Scenario2.RData")
 ```
-
-
 
 -----------
 ### Scenario 3
 Posterior computation, and calculation of the posterior samples for the Cramer's V coefficients for the local tests proceed as in Scenario 1 above. Therefore:
 
 Clean workspace, and upload source functions and data.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -578,6 +617,7 @@ load("Scenario3.RData")
 ```
 
 Set the hyperparameters.
+
 ``` r
 prior_model <- list(H=20, 
 a_dir_y=matrix(1/length(unique(c(tensor_data))),dim(tensor_data)[2],length(unique(c(tensor_data)))),
@@ -586,12 +626,14 @@ p_H_0=0.5)
 ```
 
 Perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+
 ``` r
 fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
 save(fit, file="Posterior_samples_Scenario3.RData")
 ```
 
 Compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory and upload useful data and samples.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -601,6 +643,7 @@ load("Posterior_samples_Scenario3.RData")
 ```
 
 Obtain relevant functionals to compute the **Cramer's V coefficients for the tests on the marginals**
+
 ``` r
 ################################################################################
 #DEFINE USEFUL DIMENSIONS
@@ -637,14 +680,16 @@ pi_y_marg <- array(0,c(p,d_y,N_sampl))
 for (t in 1:N_sampl){
 pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
 ```
+
 Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+
 ``` r
 test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
 save(test_marginal,file="Posterior_cramer_marginal_Scenario3.RData")
 ```
 
-
 Compute the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. To do this, clean first the working directory and upload useful data and samples.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -654,6 +699,7 @@ load("Posterior_samples_Scenario3.RData")
 ```
 
 Obtain relevant functionals to compute the the **Cramer's V coefficients for the tests on the bivariates**.
+
 ``` r
 ################################################################################
 #DEFINE USEFUL DIMENSIONS
@@ -692,7 +738,9 @@ pi_y_biv <- array(0,c(p,p,d_y,d_y,N_sampl))
 for (t in 1:N_sampl){
 pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
 ```
+
 Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+
 ``` r
 test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
 save(test_bivariate,file="Posterior_cramer_bivariate_Scenario3.RData")
@@ -702,6 +750,7 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Scenario3.RData")
 Reproduce Figure 2 in the Paper
 --------------------------------------
 To reproduce Figure 2 in the paper, clean first the working directory and upload useful libraries.
+
 ``` r
 rm(list=ls())
 library(gtools)
@@ -713,7 +762,9 @@ library(RColorBrewer)
 library(gridExtra)
 source("Core_Functions.R")
 ```
+
 Once these preliminary operations are made, load the posterior samples of the Cramer's V coefficients for the local tests previously obtained under the three scenarios.
+
 ``` r
 #--------------------------------------------------------------------------------
 #SCENARIO 1
@@ -739,13 +790,17 @@ load("Posterior_cramer_bivariate_Scenario3.RData")
 cramer_marginal3 <- test_marginal$cramer_margin
 cramer_bivariate3 <- test_bivariate$cramer_bivariate
 ```
-Let us also set useful quantities, including the **burn-in** of the MCMC chains
+
+Let us also set useful quantities, including the **burn-in** of the MCMC chains.
+
 ``` r
 p <- dim(cramer_marginal1)[1]
 MCMC_sample <- dim(cramer_marginal1)[2]
 MCMC_burn <- 1001
 ```
+
 Once this has been done, the `ggplot` code to reproduce the results for the test on the bivariates—representing the lower panels in Figure 2—is provided below.
+
 ``` r
 matr_1 <- matrix(0,p,p)
 lowerTriangle(matr_1) <- lowerTriangle(apply(cramer_bivariate1[,,MCMC_burn:MCMC_sample]>0.2,c(1,2),mean))
@@ -790,6 +845,7 @@ Bivariate <- ggplot(matr.dat, aes(X2, X1, fill = value)) +   geom_tile(color="gr
 ```
 
 The `ggplot` code to reproduce the results for the test on the marginals—representing the uppers panels in Figure 2—is instead provided below.
+
 ``` r
 marg_1 <- data.frame(melt(apply(cramer_marginal1[,MCMC_burn:MCMC_sample]>0.2,1,mean)))
 marg_1$var <- c(1:p)
@@ -806,12 +862,14 @@ marg_3$value <- marg_3$value+0.005
 matr.dat <- rbind(marg_1,marg_2,marg_3)
 matr.dat$g1 <- (c(rep("'SCENARIO 1.  Estimated pr('~rho[j]>0.2~')'",dim(matr.dat)[1]/3),rep("'SCENARIO 2.  Estimated pr('~rho[j]>0.2~')'",dim(matr.dat)[1]/3),rep("'SCENARIO 3.  Estimated pr('~rho[j]>0.2~')'",dim(matr.dat)[1]/3)))
 
-
-Margin <- ggplot(matr.dat, aes(factor(var),y=value,fill=value)) + geom_bar(stat="identity",colour="black",size=0.3)+  scale_fill_gradientn(colors=brewer.pal(9,"Greys")[2:9]) +  labs(x = "", y = "") +theme_bw() +facet_wrap(~g1, labeller = label_parsed,ncol=3)+ theme(axis.text.x = element_text(size=6.5),axis.text.y = element_text(size=6.5))+ theme(legend.title=element_blank(),plot.margin=unit(c(0.1,0.1,0.1,-0.3), "cm") )+ geom_hline(yintercept = 0.95,color="gray",,linetype=2)
+Margin <- ggplot(matr.dat, aes(factor(var),y=value,fill=value)) + geom_bar(stat="identity",colour="black",size=0.3)+  scale_fill_gradientn(colors=brewer.pal(9,"Greys")[2:9]) + labs(x = "", y = "") + theme_bw() +facet_wrap(~g1, labeller = label_parsed,ncol=3) + theme(axis.text.x = element_text(size=6.5),axis.text.y = element_text(size=6.5)) + theme(legend.title=element_blank(),plot.margin=unit(c(0.1,0.1,0.1,-0.3), "cm") ) + geom_hline(yintercept = 0.95,color="gray",,linetype=2)
 ```
+
 Finally, joining the plots `Bivariate` and `Margin` via
+
 ``` r
 grid.arrange(Margin,Bivariate,ncol=1)
 ```
 provides the Figure below.
+
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/simulation.jpg)
