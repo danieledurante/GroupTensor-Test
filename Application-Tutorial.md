@@ -237,3 +237,6 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Application.RData")
 
 Reproduce Figures 3 and 4 in the Paper
 --------------------------------------
+![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app_marg1.jpg)
+![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app_marg2.jpg)
+![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app.jpg)
