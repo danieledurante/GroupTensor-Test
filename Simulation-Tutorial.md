@@ -130,7 +130,7 @@ save(tensor_data,x_group,file="Scenario1.RData")
 -----------
 ### Scenario 2
 
-**Description**: In this first scenario there is dependence between the multivariate categorical random variable *Y* and the grouping variable *X*. Here there are both group differences in the marginals, and in the bivariates. The simulation procedure for the variables generated from the independent multinomials with the only exception of variable 2 and 8, whose probability mass function is allowed to change with groups. In fact in group *X=1* we let their probability mass function be *(0.45,0.45,0.05,0.05)*, whereas in group *X=2* we consider *(0.05,0.05,0.45,0.45)*. The variables previously generated from the joint probability mass function keep the same generative mechanism of Scenario 1 in group *X=1*. Instead in group *X=2* these variables are now generate from independent multinomials with probability mass function *(0.25,0.25,0.25,0.25)*. Hence for such variables we will only observe group differences in the bivariates, but not in the marginals. 
+**Description**: In this second scenario there is dependence between the multivariate categorical random variable *Y* and the grouping variable *X*. Here there are both group differences in the marginals, and in the bivariates. The simulation procedure for the variables generated from the independent multinomials with the only exception of variable 2 and 8, whose probability mass function is allowed to change with groups. In fact in group *X=1* we let their probability mass function be *(0.45,0.45,0.05,0.05)*, whereas in group *X=2* we consider *(0.05,0.05,0.45,0.45)*. The variables previously generated from the joint probability mass function keep the same generative mechanism of Scenario 1 in group *X=1*. Instead in group *X=2* these variables are now generate from independent multinomials with probability mass function *(0.25,0.25,0.25,0.25)*. Hence for such variables we will only observe group differences in the bivariates, but not in the marginals. 
 
 To provide reproducible results we first set a seed.
 
@@ -186,7 +186,7 @@ p <- 15
 ```
 
 The **grouping variable *X*** has been already simulated in Scenario 1. The **multivariate categorical random variable *Y***, are instead simulated according to the above description for the Scenario 2. In particular:
-- Simulate the variables generated from independent multinomials not varying with groups
+- Simulate the variables generated from independent multinomials not varying with groups.
 ``` r
 tensor_data <- matrix(0,n,p)
 
@@ -218,12 +218,68 @@ Finally let us **save** the simulated data in **Scenario 2**.
 save(tensor_data,x_group,file="Scenario2.RData")
 ```
 
+-----------
 ### Scenario 3
 
-Description
+**Description**: In final first scenario there is dependence between the multivariate categorical random variable *Y* and the grouping variable *X*. Here there are only roup differences in the bivariates. Hence we maintain the same generative process of Scenario 2, with the only exception that now the marginal probability mass functions for variables 2 and 8 are kept constant across groups—as in Scenario 1.
+
+To provide reproducible results we first set a seed.
 
 ``` r
+set.seed(123)
+```
 
+Consistent with the above discussion let us first select the indicators for the variables in *Y* generated from independent multinomials, and those generated from the joint probability mass function.
+
+``` r
+############################################################################################
+#Indicators for the variables generated from independent multinomials in group 2
+sel_indep_multinom<-c(2,3,4,6,7,8,9,11,13,14)
+
+#####################################################################
+#Indicators for the variables not generated from independent multinomials
+sel_joint <- c(1,5,10,12,15)
+```
+
+We now create the probability mass functions required to generate the data consistent with the aforementioned generative process. The **grouping variable** grouping variable has been already generated in Scenario 1, and therefore do not require additional simulations.
+
+The **variables generated from independent multinomials** simply require their marginal probability mass functions to be simulated. These marginal probabilities are the same as in Scenario 1, and therefore can be found in the matrix `pi_Y_0_multinom`. Note that, consistent with the generative mechanisms for the variables simulated from the joint probability mass function, their marginals will be equal to *(0.25,0.25,0.25,0.25)*.
+
+The **variables generated from the joint probability mass function** require a specification for all the probabilities of the different configurations. This setting is the same as in Scenario 1.
+``` r
+pi_Y_0_joint <- array(0.6/(4^5-4),c(rep(4,5)))
+pi_Y_0_joint[1,1,1,1,1] <- 0.1
+pi_Y_0_joint[2,2,2,2,2] <- 0.1
+pi_Y_0_joint[3,3,3,3,3] <- 0.1
+pi_Y_0_joint[4,4,4,4,4] <- 0.1
+
+#Vectorized probability table
+vec_pi_Y_0_joint <- as.matrix(melt(pi_Y_0_joint))
+```
+
+Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`
+``` r
+n <- 400
+p <- 15
+```
+
+The **grouping variable *X*** has been already simulated in Scenario 1. The **multivariate categorical random variable *Y***, are instead simulated according to the above description for the Scenario 3. In particular:
+``` r
+tensor_data <- matrix(0,n,p)
+
+for (i in 1:n){
+if (x_group[i]==1){	
+for (j in 1:p){
+tensor_data[i,j] <- sample(c(1:4),1,replace=TRUE,prob=pi_Y_0_multinom[j,])}
+} else {
+for (j in 1:(length(sel_indep_multinom))){
+tensor_data[i,sel_indep_multinom[j]]<-sample(c(1:4),1,replace=TRUE,prob=pi_Y_0_multinom[sel_indep_multinom[j],])}
+tensor_data[i,sel_joint]<-c(vec_pi_Y_0_joint[sample(c(1:dim(vec_pi_Y_0_joint)[1]),1,replace=TRUE,prob=vec_pi_Y_0_joint[,6]),1:5])}}
+```
+
+Finally let us **save** the simulated data in **Scenario 3**.
+``` r
+save(tensor_data,x_group,file="Scenario3.RData")
 ```
 
 
