@@ -701,3 +701,4 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Scenario3.RData")
 
 Reproduce Figure 2 in the Paper
 --------------------------------------
+![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/simulation.jpg)
