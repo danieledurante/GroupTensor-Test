@@ -95,7 +95,7 @@ Sel_Group<-rep(0,H)
 Tens_dummy<-array(0,c(p,d_y,n))
 for (i in 1:n){
 for (j in 1:p){
-Tens_dummy[j,tensor_data[i,j],i]<-1}	}	
+Tens_dummy[j,tensor_data[i,j],i]<-1}}	
 
 #-----------------------------------------------------------------------------#
 #Marginals of x
@@ -203,7 +203,7 @@ data_0<-sum(lgamma(a_dir_nu+apply(Group_matr_test,2,sum)))-(lgamma(sum(a_dir_nu)
 
 data_1<-matrix(0,d_x,1)
 for (k in 1:d_x){
-data_1[k,]<-sum(lgamma(a_dir_nu+apply(Group_matr_test[x_group==k,],2,sum)))-(lgamma(sum(a_dir_nu)+n_x[k]))	}
+data_1[k,]<-sum(lgamma(a_dir_nu+apply(Group_matr_test[x_group==k,],2,sum)))-(lgamma(sum(a_dir_nu)+n_x[k]))}
 
 P_0_given_Data<-hyperpar+data_0
 P_1_given_Data<-sum(hyperpar+data_1)
