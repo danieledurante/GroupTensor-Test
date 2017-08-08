@@ -556,7 +556,7 @@ load("Scenario2.RData")
 load("Posterior_samples_Scenario2.RData")
 ```
 
-Obtain relevant functionals to compute the the **Cramer's V coefficients for the tests on the bivariates**.
+Obtain relevant functionals to compute the **Cramer's V coefficients for the tests on the bivariates**.
 
 ``` r
 ################################################################################
@@ -700,7 +700,7 @@ load("Scenario3.RData")
 load("Posterior_samples_Scenario3.RData")
 ```
 
-Obtain relevant functionals to compute the the **Cramer's V coefficients for the tests on the bivariates**.
+Obtain relevant functionals to compute the **Cramer's V coefficients for the tests on the bivariates**.
 
 ``` r
 ################################################################################
