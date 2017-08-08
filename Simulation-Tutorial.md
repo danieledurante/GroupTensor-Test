@@ -238,7 +238,7 @@ save(tensor_data,x_group,file="Scenario2.RData")
 -----------
 ### Scenario 3
 
-**Description**: In final first scenario there is dependence between the multivariate categorical random variable *Y* and the grouping variable *X*. Here there are only roup differences in the bivariates. Hence we maintain the same generative process of Scenario 2, with the only exception that now the marginal probability mass functions for variables 2 and 8 are kept constant across groups—as in Scenario 1.
+**Description**: In final first scenario there is dependence between the multivariate categorical random variable *Y* and the grouping variable *X*. Here there are only group differences in the bivariates. Hence we maintain the same generative process of Scenario 2, with the only exception that now the marginal probability mass functions for variables 2 and 8 are kept constant across groups—as in Scenario 1.
 
 To provide reproducible results we first set a seed.
 
