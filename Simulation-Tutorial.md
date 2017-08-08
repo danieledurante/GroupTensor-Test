@@ -282,7 +282,7 @@ n <- 400
 p <- 15
 ```
 
-The **grouping variable *X*** has been already simulated in Scenario 1. The **multivariate categorical random variable *Y***, are instead simulated according to the above description for the Scenario 3. In particular:
+The **grouping variable *X*** has been already simulated in Scenario 1. The **multivariate categorical random variable *Y***, is instead simulated according to the above description for the Scenario 3. In particular:
 
 ``` r
 tensor_data <- matrix(0,n,p)
