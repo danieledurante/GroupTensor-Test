@@ -58,7 +58,7 @@ tensor_dat <- tensor_dat[sel,]
 response <- response[sel]
 ```
 
-The grouping variable denoting the voters preferences at the Presidential primaries, contain also information on the Republican primaries. Since our focus is only on the Democratic primaries, we **select only the voters who chose either Hillary Clinton or Bernie Sanders.**
+The grouping variable denoting the voters preferences at the Presidential primaries, contains also information on the Republican primaries. Since our focus is only on the Democratic primaries, we **select only the voters who chose either Hillary Clinton or Bernie Sanders.**
 
 ``` r
 sel_resp <- which(response=="1. Hillary Clinton" | response=="2. Bernie Sanders")
