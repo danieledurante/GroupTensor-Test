@@ -293,7 +293,7 @@ cramer_probabilities <- melt(cramer_probabilities)
 cramer_probabilities <- cramer_probabilities[-which(is.na(cramer_probabilities[, 3])),]
 cramer_probabilities <- cramer_probabilities$value
 ```
-Once this has been done, the `ggplot` code to reproduce the results for the test on the bivariates in **Figure 4**, is provided below.
+Once this has been done, the `ggplot` code to reproduce the results for the tests on the bivariates in **Figure 4**, is provided below.
 
 ``` r
 matr_1 <- matrix(0,p,p)
@@ -349,7 +349,7 @@ Bivariate
 ```
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app.jpg)
 
-To obtain **Figure 3** in the paper, we require the posterior distributions of the probability mass functions for the *p* in each of the two groups of voters. The posterior samples associated with these quantities are stored in `Posterior_cramer_marginal_Application.RData`. Hence, load these samples, and set useful quantities.
+To obtain **Figure 3** in the paper, we require the posterior distributions of the probability mass functions for the *p* variables in each of the two groups of voters. The posterior samples associated with these quantities are stored in `Posterior_cramer_marginal_Application.RData`. Hence, load these samples, and set useful quantities.
 
 ``` r
 load("Posterior_cramer_marginal_Application.RData")
