@@ -8,7 +8,7 @@ As described in the [`README.md`](https://github.com/danieledurante/GroupTensor-
 
 Simulate the Data under the Three Scenarios in the Paper
 --------------------------------------
-We consider **three simulation studies** to evaluate the empirical performance of the proposed methodologies in several scenarios of interest, characterized by different types of dependence between the multivariate categorical random variable *Y* and the grouping variable *X*. Details and discussion on how the data are simulated can be found in **Section 4** of the paper. **All the steps below should be run in the same order as they are presented**.
+We consider **three simulation studies** to evaluate the empirical performance of the proposed methodologies in several scenarios of interest, characterized by different types of dependence between the multivariate categorical random variable *Y*, and the grouping variable *X*. Details and discussion on how the data are simulated can be found in **Section 4** of the paper. **All the steps below should be run in the same order as they are presented**.
 
 Let us first clean the working directory and upload useful `R` libraries.
 
