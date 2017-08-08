@@ -196,8 +196,8 @@ n <- 400
 p <- 15
 ```
 
-The **grouping variable *X*** has been already simulated in Scenario 1. The **multivariate categorical random variable *Y***, are instead simulated according to the above description for the Scenario 2. In particular:
-- Simulate the variables generated from independent multinomials not varying with groups.
+The **grouping variable *X*** has been already simulated in Scenario 1. The **multivariate categorical random variable *Y***, is instead simulated according to the above description for the Scenario 2. In particular:
+- Simulate the variables generated from the independent multinomials not varying with groups.
 
 ``` r
 tensor_data <- matrix(0,n,p)
@@ -217,7 +217,7 @@ for (j in 1:(length(sel_joint))){
 tensor_data[i,sel_joint[j]]<-sample(c(1:4),1,replace=TRUE,prob=pi_Y_0_multinom_1[sel_joint[j],])}}}
 ```
 
-- Simulate the variables 2 and 8 generated from independent multinomials varying with groups.
+- Simulate the variables 2 and 8 from independent multinomials with probabilities varying with groups.
 
 ``` r
 for (i in 1:n){
