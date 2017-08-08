@@ -316,11 +316,11 @@ Posterior computation under the dependent mixture of tensor factorizations requi
 
 The function `gibbs_tensor()` outputs the posterior samples for the parameters of the model described in **Section 2** of the paper.
 
-Let us perform posterior inference for the three simulations, and compute the posterior samples of the Cramer's V coefficient required for the local tests on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
+Let us **perform posterior inference for the three simulations, and compute the posterior samples of the Cramer's V coefficient** required for the local tests on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
 
 -----------
 ### Scenario 1
-To perform posterior computation set a working directory containing the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R). Once this is done, clean the work space, and upload the source functions [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R) along with useful libraries, and the data.
+To perform posterior computation, set a working directory containing the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R). Once this is done, clean the workspace, and upload the source functions [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), along with useful libraries, and the data.
 
 ``` r
 rm(list=ls())
@@ -330,7 +330,7 @@ source("Core_Functions.R")
 load("Scenario1.RData")
 ```
 
-Let us now set the hyperparameters as in **Section 3** of the paper.
+Let us now set the hyperparameters as in **Section 4** of the paper.
 
 ``` r
 prior_model <- list(H=20, 
@@ -346,7 +346,7 @@ fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model
 save(fit, file="Posterior_samples_Scenario1.RData")
 ```
 
-Once the MCMC samples for the parameters of the statistical model are available, we can compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory and upload useful data and samples.
+Once the MCMC samples for the parameters of the statistical model are available, we can compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory, and upload useful data and samples.
 
 ``` r
 rm(list=ls())
@@ -402,7 +402,7 @@ test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_mar
 save(test_marginal,file="Posterior_cramer_marginal_Scenario1.RData")
 ```
 
-Similar steps are required to obtain the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. Hence, clean first the working directory and upload useful data and samples.
+Similar steps are required to obtain the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. Hence, clean first the working directory, and upload useful data and samples.
 
 ``` r
 rm(list=ls())
