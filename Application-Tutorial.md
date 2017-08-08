@@ -89,7 +89,7 @@ Posterior computation under the dependent mixture of tensor factorizations requi
 
 - `Y_response`: an *nxp* matrix containing the values of the *p* categorical variables observed for the *n* units.
 - `x_predictor`: a vector with the group memberships for the *n* units.
-- `prior_model`: a list of the hyperparameters discussed in **Section 3.1** and the number of mixture components *H*.
+- `prior`: a list of the hyperparameters discussed in **Section 3.1** and the number of mixture components *H*.
 - `N_sampl`: the number of MCMC samples required.
 - `seed`: a seed to ensure reproducibility.
 
