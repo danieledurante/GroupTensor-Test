@@ -378,7 +378,7 @@ Leveraging this function, the `ggplot` code to reproduce the first panel in **Fi
 matr.dat <- plot_function(1,pi_y_1,pi_y_2,MCMC_burn,MCMC_sample)
 for (j in 2:10){
 matr.dat <- rbind(matr.dat,plot_function(j,pi_y_1,pi_y_2,MCMC_burn,MCMC_sample))}
-matr.dat$g1 <- factor(c(rep("'Hillary'",dim(matr.dat)[1]/2),rep("'Trump'",dim(matr.dat)[1]/2)),levels=c("'Hillary'","'Trump'"))
+matr.dat$g1 <- factor(c(rep("'Clinton'",dim(matr.dat)[1]/2),rep("'Trump'",dim(matr.dat)[1]/2)),levels=c("'Clinton'","'Trump'"))
 matr.dat$g2 <- factor(c(rep("'Angry'",5),rep("'Hopeful'",5),rep("'Afraid'",5),rep("'Proud'",5),rep("'Disgusted'",5),rep("'Angry'",5),rep("'Hopeful'",5),rep("'Afraid'",5),rep("'Proud'",5),rep("'Disgusted'",5)),levels=c("'Angry'","'Hopeful'","'Afraid'","'Proud'","'Disgusted'"))
 lab <- c("Never","Sometime","Half times","Most times","Always")
 
@@ -395,7 +395,7 @@ The `ggplot` code to reproduce the second panel in **Figure 3**—describing gro
 matr.dat <- plot_function(11,pi_y_1,pi_y_2,MCMC_burn,MCMC_sample)
 for (j in 12:20){
 matr.dat <- rbind(matr.dat,plot_function(j,pi_y_1,pi_y_2,MCMC_burn,MCMC_sample))}
-matr.dat$g1 <- factor(c(rep("'Hillary'",dim(matr.dat)[1]/2),rep("'Trump'",dim(matr.dat)[1]/2)),levels=c("'Hillary'","'Trump'"))
+matr.dat$g1 <- factor(c(rep("'Clinton'",dim(matr.dat)[1]/2),rep("'Trump'",dim(matr.dat)[1]/2)),levels=c("'Clinton'","'Trump'"))
 matr.dat$g2 <- factor(c(rep("'Leadership'",5),rep("'Cares'",5),rep("'Knowledgeable'",5),rep("'Honest'",5),rep("'Speaks Mind'",5),rep("'Leadership'",5),rep("'Cares'",5),rep("'Knowledgeable'",5),rep("'Honest'",5),rep("'Speaks Mind'",5)),levels=c("'Leadership'","'Cares'","'Knowledgeable'","'Honest'","'Speaks Mind'"))
 lab <- c("Extr. well","Very well","Moder. well","Slight. well","Not well")
 
