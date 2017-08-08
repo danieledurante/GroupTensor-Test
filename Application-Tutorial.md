@@ -40,7 +40,7 @@ response <- dati[,group_variable]
 tensor_dat <- dati[,selected_variables]
 ```
 
-**For a subset of the voters we observe categories `-9. Refused` or `-8. Don't know (FTF only)`** in some variables measuring feelings and opinions for Hillary Clinton and Donald Trump. **We hold these voters out from our analysis** since they do not provide information of their evaluations and preferences.
+**For a subset of the voters we observe categories `-9. Refused` or `-8. Don't know (FTF only)`** in some variables measuring feelings and opinions for Hillary Clinton and Donald Trump. **We hold these voters out from our analysis** since we do not have information on their evaluations and preferences.
 
 ``` r
 for(j in 1:NCOL(tensor_dat))
