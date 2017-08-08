@@ -250,7 +250,7 @@ Consistent with the above discussion let us first select the indicators for the 
 
 ``` r
 ############################################################################################
-#Indicators for the variables generated from independent multinomials in group 2
+#Indicators for the variables generated from independent multinomials
 sel_indep_multinom<-c(2,3,4,6,7,8,9,11,13,14)
 
 #####################################################################
