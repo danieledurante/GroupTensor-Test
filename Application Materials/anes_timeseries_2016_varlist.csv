@@ -1,0 +1,1197 @@
+LIST OF VARIABLES,,
+1,version,Version of ANES 2016 Time Series release
+2,V160001,2016 Case ID
+3,V160101,Pre-election weight -full sample
+4,V160101f,Pre-election weight -FTF sample
+5,V160101w,Pre-election weight -Web sample
+6,V160102,Post-election weight -full sample
+7,V160102f,Post-election weight -FTF sample
+8,V160102w,Post-election weight -Web sample
+9,V160201,Stratum -full sample
+10,V160201f,Stratum -FTF sample
+11,V160201w,Stratum -Web sample
+12,V160202,Variance PSU -Full sample
+13,V160202f,Variance PSU -FTF sample
+14,V160202w,Variance PSU -Web sample
+15,V160501,Mode of interview
+16,V160502,Completed Pre only or completed Pre and Post interviews
+17,V161001,PRE: FTF ONLY: Audio Consent
+18,V161002,PRE: FTF ONLY: INTERVIEWER : Is R male or female (Observation)
+19,V161003,PRE: How often does R pay attn to politics and elections
+20,V161004,PRE: How interested in following campaigns
+21,V161005,PRE: Did R vote for President in 2012
+22,V161006,PRE: Recall of last (2012) Presidential vote choice
+23,V161007,PRE: FTF ONLY: HH Internet use
+24,V161008,PRE: Days in week watch/listen/read news on any media
+25,V161009,PRE: Attention to news on any media
+26,V161010a,PRE: Vote section- order of major party candidate names / FTF BallotColor
+27,V161010b,PRE: Vote section- household address preloaded (sample address)
+28,V161010c,PRE: Vote section- candidate names preloaded for sample address
+29,V161010d,PRE: Vote section- FIPS state code for sample address
+30,V161010e,PRE: Vote section- 2-char state Postal abbreviation for sample address
+31,V161010f,PRE: Vote section- U.S. House District number (115th Congress) for sample address
+32,V161011,PRE: Is R registered to vote (pre-election)
+33,V161011a,PRE WEB: Is R registered (registration address not answered)
+34,V161012,PRE: Address of registration given (not registered at sample address)
+35,V161013a,PRE: State included in address of registration (not registered at samp addr)
+36,V161013b,PRE: City included in address of registration (not registered at samp addr)
+37,V161014,PRE: State of registration - reg state not given (not registered at samp addr)
+38,V161015a,PRE: Registration state same as sample address state (all registrations)
+39,V161015b,PRE: Registration state (all registrations)
+40,V161015c,PRE: Senate race in state of registration (all registrations)
+41,V161015d,PRE: Governor race in state of registration (all registrations)
+42,V161015e,PRE: Party registration in state of registration (all registrations)
+43,V161016,PRE: Is R registered to vote in preload county (resid)
+44,V161017,PRE: How many years has R been registered at registration location
+45,V161018,PRE: Was name recorded for registration name
+46,V161019,PRE: Party of registration
+47,V161020,PRE: Does R intend to register to vote
+48,V161021,PRE: Did R vote in a Presidential primary or caucus
+49,V161021a,PRE: For which candidate did R vote in Presidential prim
+50,V161022,PRE: Already voted in General Election
+51,V161022a,PRE: Confirmation voted (early) in November 8 election
+52,V161023,PRE: In what manner did R vote
+53,V161024x,PRE: SUMMARY - Registration and early vote status
+54,V161025,PRE: FTF ONLY: IWR CHECKPOINT: have correct Pre ballot card
+55,V161025a,PRE: FTF ONLY: IWR error at Ballot Card checkpoint
+56,V161025x,PRE: SUMMARY - administration of Pre vote module
+57,V161026,PRE: Did R vote for President in 2016
+58,V161027,PRE: For whom did R vote for President
+59,V161028,PRE: Preference strong for Pres cand for whom R voted
+60,V161029a,PRE: Placehold Text- How long before election R made decision Pres vote
+61,V161029b,PRE: Placeholder Code- How long before election R made decision Pres vote
+62,V161030,PRE: Does R intend to vote for President
+63,V161031,PRE: For whom does R intend to vote for President
+64,V161032,PRE: Pref strng for Pres cand for whom R intends to vote
+65,V161033,PRE: Does R prefer Pres cand (no intent to register)
+66,V161034,PRE: Preference for Pres cand (no intent to register)
+67,V161035,PRE: Preference strong for Pres cand (no intent to reg)
+68,V161036,PRE: Did R vote for U.S. House of Representatives
+69,V161037,PRE: For whom did R vote for U.S. House (ballot card)
+70,V161038,PRE: For whom did R vote for U.S. House (no ballot card)
+71,V161039,PRE: Does R intend to vote for U.S. House
+72,V161040,PRE: For whom does R intend to vote for U.S. House (ballot card)
+73,V161041,PRE: For whom does R intend to vote for U.S. House (no ballot cd)
+74,V161042,PRE: Does R prefer U.S. House candidate
+75,V161043,PRE: Whom does R prefer for U.S. House (ballot card)
+76,V161044,PRE: Whom does R prefer for U.S. House (no ballot card)
+77,V161045x,PRE SUMMARY: Senate and Governor races
+78,V161046,PRE: Did R vote for U.S. Senate
+79,V161047,PRE: R's vote for U.S. Senate (ballot card)
+80,V161048,PRE: R's vote for U.S. Senate (no ballot card)
+81,V161049,PRE: Does R intend to vote for U.S. Senate
+82,V161050,PRE: For whom does R intend to vote for U.S. Senate (ballot card
+83,V161051,PRE: For whom does R intend to vote for US. Senate (no ballot cd)
+84,V161052,PRE: Does R prefer U.S. Senate candidate
+85,V161053,PRE: Whom does R prefer for U.S. Senate (ballot card)
+86,V161054,PRE: Whom does R prefer for U.S. Senate (no ballot card)
+87,V161055,PRE: Did R vote for governor
+88,V161056,PRE: R's vote for governor(ballot card)
+89,V161057,PRE: R's vote for governor (no ballot card)
+90,V161058,PRE: Does R intend to vote for governor
+91,V161059,PRE: For whom does R intend to vote for governor (ballot card)
+92,V161060,PRE: For whom does R intend to vote for governor (no ballot cd)
+93,V161061,PRE: Does R prefer gubernatorial candidate
+94,V161062,PRE: Whom does R prefer for governor (ballot card)
+95,V161063,PRE: Whom does R prefer for governor (no ballot card)
+96,V161064x,PRE: SUMMARY - party of Pre-election Presidential vote/intent/preference
+97,V161065x,PRE: SUMMARY - party of Pre-election U.S. House vote/intent/preference
+98,V161066x,PRE: SUMMARY - party of Pre-election U.S. Senate vote/intent/preference
+99,V161067x,PRE: SUMMARY - party of Pre-election Gubernatorial vote/intent/preference
+100,V161068,PRE: Is there anything R likes about Democratic Pres cand
+101,V161069,PRE: Text- What is it that R likes about Democratic Pres cand
+102,V161070a,PRE: Code- What is it that R likes about Democratic Pres cand
+103,V161071,PRE: Is there anything R dislikes about Democratic Pres cand
+104,V161072,PRE: Text- What is it that R dislikes about Democratic Pres cand
+105,V161073a,PRE: Code- What is it that R dislikes about Democratic Pres cand
+106,V161074,PRE: Is there anything R likes about Republican Pres cand
+107,V161075,PRE: Text- What is it that R likes about Republican Pres cand
+108,V161076a,PRE: Code- What is it that R likes about Republican Pres cand
+109,V161077,PRE: Is there anything R dislikes about Republican Pres cand
+110,V161078,PRE: Text- What is it that R dislikes about Republican Pres cand
+111,V161079a,PRE: Code- What is it that R dislikes about Republican Pres cand
+112,V161080,PRE: Approval of Congress handling its job
+113,V161080a,PRE: Strength appr disapprove Congress handling its job
+114,V161080x,PRE: SUMMARY - Approval/disapproval Congress handling job
+115,V161081,PRE: Are things in the country on right track
+116,V161082,PRE: Approve or disapprove President handling job as Pres
+117,V161082a,PRE: How much approve or disapp Pres handling job
+118,V161082x,PRE: SUMMARY - Approval/disapproval President handling job
+119,V161083,PRE: Approve or disapprove President handling economy
+120,V161083a,PRE: How much approve or disapprove Pres handling economy
+121,V161083x,PRE: SUMMARY - Approval/disapproval President handling economy
+122,V161084,PRE: Approve or disapprove President handling foreign rel
+123,V161084a,PRE: How much approve or disapprove Pres handling foreign rel
+124,V161084x,PRE: SUMMARY - Approval/disapproval President handling foreign rel
+125,V161085,PRE: Approve or disapprove President handling health care
+126,V161085a,PRE: How much approve or disapprove Pres handling health care
+127,V161085x,PRE: SUMMARY - Approval/disapproval President handling health care
+128,V161086,PRE: Feeling Thermometer: Democratic Presidential cand
+129,V161087,PRE: Feeling Thermometer: Republican Presidential cand
+130,V161088,PRE: Feeling Thermometer: Libertarian Presidential cand
+131,V161089,PRE: Feeling Thermometer: Green Party Presidential cand
+132,V161090,PRE: Feeling Thermometer: Democratic Vice-Pres cand
+133,V161091,PRE: Feeling Thermometer: Republican Vice-Pres cand
+134,V161092,PRE: Feeling Thermometer: Previous President
+135,V161093,PRE: Feeling Thermometer: Bill Clinton
+136,V161094,PRE: Feeling Thermometer: Libertarian Vice-Pres cand
+137,V161095,PRE: Feeling Thermometer: Democratic Party
+138,V161096,PRE: Feeling Thermometer: Republican Party
+139,V161097,PRE: Is there anything R likes about Democratic Party
+140,V161098,PRE: Text- What does R like about Democratic party
+141,V161099a,PRE: Code- What does R like about Democratic party
+142,V161100,PRE: Is there anything R dislikes about Democratic Party
+143,V161101,PRE: Text- What does R dislike about the Democratic party
+144,V161102a,PRE: Code- What does R dislike about the Democratic party
+145,V161103,PRE: Is there anything R likes about Republican Party
+146,V161104,PRE: Text- What does R like about Republican party
+147,V161105a,PRE: Code- What does R like about Republican party
+148,V161106,PRE: Is there anything R dislikes about Republican Party
+149,V161107,PRE: Text- What does R dislike about the Republican party
+150,V161108a,PRE: Code- What does R dislike about the Republican party
+151,V161109,PRE: R living with how many family members
+152,V161110,PRE: R how much better worse off than 1 year ago
+153,V161111,PRE: R how much better worse off next year
+154,V161112,PRE: Does R have health insurance
+155,V161113,PRE: Favor or oppose 2010 health care law
+156,V161114a,PRE: Strength favor 2010 health care law
+157,V161114b,PRE: Strength oppose 2010 health carelaw
+158,V161114x,PRE: Summary: favor/oppose 2010 health care law
+159,V161115,PRE: Self-evaluation of R health
+160,V161116,PRE: Affect for Democratic Pres cand: angry
+161,V161117,PRE: Affect for Democratic Pres cand: hopeful
+162,V161118,PRE: Affect for Democratic Pres cand: afraid
+163,V161119,PRE: Affect for Democratic Pres cand: proud
+164,V161120,PRE: Affect for Democratic Pres cand: disgusted
+165,V161121,PRE: Affect for Republican Pres cand: angry
+166,V161122,PRE: Affect for Republican Pres cand: hopeful
+167,V161123,PRE: Affect for Republican Pres cand: afraid
+168,V161124,PRE: Affect for Republican Pres cand: proud
+169,V161125,PRE: Affect for Republican Pres cand: disgusted
+170,V161126,PRE: 7pt scale Liberal conservative self-placement
+171,V161127,PRE: If R had to choose liberal or conservative self-placemt
+172,V161128,PRE: 7pt scale liberal conservative - Dem Pres cand
+173,V161129,PRE: 7pt scale liberal conservative - Rep Pres cand
+174,V161130,PRE: 7pt scale liberal conservative Dem party
+175,V161131,PRE: 7pt scale liberal conservative Rep party
+176,V161132,PRE: SUMMARY - PLACEMENT 1 or PLACEMENT 2
+177,V161133,PRE: PLACEMENT 1: How likely is it R will vote in Nov
+178,V161134a,PRE: PLACEMENT1: Percent for major party Pres candidates
+179,V161134b,PRE: PLACEMENT1: Percent for major party Pres candidates
+180,V161135a,PRE: PLACEMENT1: State percent for major party Pres candidates
+181,V161135b,PRE: PLACEMENT1: State percent for major party Pres candidates
+182,V161136,PRE: Party Control or split government
+183,V161137,PRE: Income gap today more or less than 20 years ago
+184,V161138a,PRE: How much larger is income gap today
+185,V161138b,PRE: How much smaller is income gap today
+186,V161138x,PRE: SUMMARY - larger/smaller income gap today
+187,V161139,PRE: Current economy good or bad
+188,V161140,PRE: National economy better worse in last year
+189,V161140a,PRE: How much national economy better worse in last year
+190,V161140x,PRE: SUMMARY - economy better/worse in last year
+191,V161141,PRE: Economy better or worse in next 12 months
+192,V161141a,PRE: How much econ better worse next 12 months
+193,V161141x,PRE: SUMMARY - economy better/worse in next year
+194,V161142,PRE: Unemployment better or worse in last year
+195,V161142a,PRE: How much unemployment better or worse in last year
+196,V161142x,PRE: SUMMARY: more/less unemployment in last year
+197,V161143,PRE: More or less unemployment in next year
+198,V161144,PRE: Which party better: handling nations economy
+199,V161145,PRE: Care who wins Presidential Election revised version
+200,V161146,PRE: Who does R think will be elected President
+201,V161147,PRE: Will Pres race be a close or will (winner) win by a lot
+202,V161148,PRE: Which Pres cand will carry state
+203,V161149,PRE: Will Pres race be close in state
+204,V161150a,PRE: VERSION 1A placement- Does R consider voting a duty or choice
+205,V161150b,PRE: VERSION 1B placement- Does R consider voting a choice or duty
+206,V161151a,PRE: How strongly does R feel that voting is a duty
+207,V161151b,PRE: How strongly does R feel that voting is a choice
+208,V161151x,PRE: SUMMARY - Voting as duty or choice
+209,V161152,"PRE: During last year, U.S. position in world weaker str"
+210,V161153,PRE: Country would be better off if we just stayed home
+211,V161154,PRE: Force to solve international problems
+212,V161155,"PRE: Party ID: Does R think of self as Dem, Rep, Ind or what"
+213,V161155a,PRE: Party ID other specifys
+214,V161156,PRE: Party Identification strong - Democrat Republican
+215,V161157,PRE: No Party Identification - closer to Dems or Reps
+216,V161158x,PRE: SUMMARY - Party ID
+217,V161159,PRE: Pres Dem cand trait strong leadership
+218,V161160,PRE: Pres Dem cand trait really cares
+219,V161161,PRE: Pres Dem cand trait knowledgeable
+220,V161162,PRE: Pres Dem cand trait honest
+221,V161163,PRE: Pres Dem cand trait speaks mind
+222,V161164,PRE: Pres Rep cand trait strong leadership
+223,V161165,PRE: Pres Rep cand trait really cares
+224,V161166,PRE: Pres Rep cand trait knowledgeable
+225,V161167,PRE: Pres Rep cand trait honest
+226,V161168,PRE: Pres Rep cand trait speaks mind
+227,V161169,PRE: Pres Dem cand even-tempered
+228,V161170,PRE: Pres Rep cand even-tempered
+229,V161171,PRE: Prefer government official who compromises
+230,V161172,PRE: How should party nominees be chosen
+231,V161173,PRE: Rep and Dem adequate parties
+232,V161174,PRE: Serious third party or independent Pres cand choice
+233,V161175,PRE: Supreme Court nominee - legal qualifications
+234,V161176,PRE: Supreme Court nominee - likely to vote on controversial issues
+235,V161177,PRE: Senate vote on Supreme Court nominee by outgoing President
+236,V161178,PRE: 7pt scale spending and Services self-placement
+237,V161179,PRE: 7pt scale spending and Services Dem Presidential cand
+238,V161180,PRE: 7pt scale spending and Services Rep Presidential cand
+239,V161181,PRE: 7pt scale defense spending self-placement
+240,V161182,PRE: 7pt scale defense spending Dem Pres cand
+241,V161183,PRE: 7pt scale defense spending Rep Pres cand
+242,V161184,PRE: 7pt scale govt-private medical insur scale: self-plmt
+243,V161185,PRE: 7pt scale govt-private medical insur scale: Dem Pres cand
+244,V161186,PRE: 7pt scale govt-private medical insur scale: Rep Pres cand
+245,V161187,PRE: Should fed govt make it more difficult to buy a gun
+246,V161188,PRE: Importance of gun access issue to R
+247,V161189,PRE: 7pt scale guaranteed job-income scale: self-placement
+248,V161190,PRE: 7pt scale guaranteed job-income scale: Dem Pres cand
+249,V161191,PRE: 7pt scale guaranteed job-income scale: Rep Pres cand
+250,V161192,PRE: U.S. government policy toward unauthorized immigrants
+251,V161193,PRE: Favor or oppose ending birthright citizenship
+252,V161193a,PRE: Strength R favors or opposes ending birthright citizenship
+253,V161194x,PRE: SUMMARY - birthright citizenship
+254,V161195,PRE: Children brought illegally sent back
+255,V161195a,PRE: Children brought illegally strength follow-up
+256,V161195x,PRE: SUMMARY - Children brought illegally
+257,V161196,PRE: Build a wall with Mexico
+258,V161196a,PRE: Build a wall with Mexico strength follow-up
+259,V161196x,PRE: SUMMARY - Build wall with Mexico
+260,V161197,PRE: How important to speak English in US
+261,V161198,PRE: 7pt scale govt assistance to blacks scale: self-placemt
+262,V161199,PRE: 7pt scale govt assistance to blacks scale: Dem Pres cand
+263,V161200,PRE: 7pt scale govt assistance to blacks scale: Rep Pres cand
+264,V161201,PRE: 7pt scale environment-jobs tradeoff self-placement
+265,V161202,PRE: 7pt scale environment-jobs tradeoff Dem Pres cand
+266,V161203,PRE: 7pt scale environment-jobs tradeoff Rep Pres cand
+267,V161204,PRE: Does R favor or oppose affirmative action in universities
+268,V161204a,PRE: How much does R favor affirmative action in universities
+269,V161204b,PRE: How much does R oppose affirmative action in universities
+270,V161204x,PRE: SUMMARY - Favor or oppose affirmative action in universities
+271,V161205,PRE: Federal Budget Spending: Social Security
+272,V161206,PRE: Federal Budget Spending: public schools
+273,V161207,PRE: Federal Budget Spending: science and technology
+274,V161208,PRE: Federal Budget Spending: dealing with crime
+275,V161209,PRE: Federal Budget Spending: welfare programs
+276,V161210,PRE: Federal Budget Spending: child care
+277,V161211,PRE: Federal Budget Spending: aid to the poor
+278,V161212,PRE: Federal Budget Spending: protecting the environment
+279,V161213,PRE: Sending troops to fight ISIS
+280,V161213a,PRE: Sending troops to fight ISIS follow-up
+281,V161213x,PRE: SUMMARY - send troops to fight ISIS
+282,V161214,PRE: Should Syrian refugees be allowed to come to the U.S.
+283,V161214a,PRE: Allow Syrian refugees strength
+284,V161214x,PRE: SUMMARY - Allow Syrian refugees
+285,V161215,PRE: REV How often trust govt in Wash to do what is right
+286,V161216,PRE: Govt run by a few big interests or for benefit of all
+287,V161217,PRE: Does government waste much tax money
+288,V161218,PRE: How many in government are corrupt
+289,V161219,PRE: How often can people be trusted
+290,V161220,PRE: Elections make govt pay attention
+291,V161221,PRE: Is global warming happening or not
+292,V161222,PRE: Anthropogenic climate change
+293,V161223,PRE: Approve or disapprove fracking
+294,V161224,PRE: Govt action about rising temperatures
+295,V161224a,PRE: Strength of position on govt action about rising temperatures
+296,V161225x,PRE: SUMMARY - Govt action about rising temperatures
+297,V161226,PRE: Require employers to offer paid leave to parents of new children
+298,V161226a,PRE: Strength require employers to offer paid leave to parents of new children
+299,V161226x,PRE: SUMMARY - require employers to offer paid leave to new parents
+300,V161227,PRE: Services to same sex couples
+301,V161227a,PRE: Services to same sex couples strength
+302,V161227x,PRE: SUMMARY - Services to same sex couples
+303,V161228,PRE: Transgender bathroom policy
+304,V161228a,PRE: Transgender policy strength
+305,V161228x,PRE: SUMMARY - Transgender policy
+306,V161229,PRE: Should laws protect gays lesbians against job discrim
+307,V161229a,PRE: How much fav opp laws protect gays lesbians job discrim
+308,V161229x,PRE: SUMMARY - Laws to protect gays and lesbians against job discrim
+309,V161230,PRE: Should gay and lesbian couples be allowed to adopt
+310,V161231,PRE: R position on gay marriage
+311,V161232,PRE: STD Abortion: self-placement
+312,V161233,PRE: R favor oppose death penalty
+313,V161233a,PRE: Strength R favors opposes death penalty
+314,V161233x,PRE: SUMMARY - Favor or oppose death penalty
+315,V161234,PRE: U.S. more or less secure than when Pres took office
+316,V161235,PRE: Economy better since 2008
+317,V161235a,PRE: Economy better/worse since 2008 strength
+318,V161235x,PRE: SUMMARY - Economy since 2008
+319,V161236,PRE: Affect for Obama - angry
+320,V161237,PRE: Affect for Obama - proud
+321,V161238,PRE: PLACEMENT 2: How likely is it that R will vote in Nov
+322,V161239a,PRE: PLACEMENT 2: Percent for major party Pres candidates
+323,V161239b,PRE: PLACEMENT 2: Percent for major party Pres candidates
+324,V161240a,PRE: PLACEMENT 2: State percent for major party Pres candidates
+325,V161240b,PRE: PLACEMENT 2: State percent for major party Pres candidates
+326,V161241,PRE: Is religion important part of R life
+327,V161242,PRE: Religion provides guidance in day-to-day living
+328,V161243,PRE: Is Bible word of God or men
+329,V161244,PRE: Ever attend church or religious services
+330,V161245,PRE: Attend religious services how often
+331,V161245a,PRE: Attend church more often than once a week
+332,V161246,PRE: Ever think of self as part of church or denomination
+333,V161247a,PRE: (Attends church) R subjective description own major religious group
+334,V161247b,PRE: (Nonattendance) R subjective description of own major religious group
+335,V161248,PRE: R subjective description of own major relig denomination
+336,V161249,PRE: R description of specific Baptist denomination
+337,V161250,PRE: R description of specific indep. Baptist denomination
+338,V161251,PRE: R description of specific Lutheran denomination
+339,V161252,PRE: R description of specific Methodist denomination
+340,V161253,PRE: R description of specific Presbyterian denomination
+341,V161254,PRE: R description of specific Reformed denomination
+342,V161255,PRE: R description of specific Brethren denomination
+343,V161256,PRE: R description of specific Disciples denomination
+344,V161257,PRE: R description of specific Church of Christ denomination
+345,V161258,PRE: R description of specific Church of God denomination
+346,V161259,PRE: R description of specific Holiness Pentecostal denomination (open-end)
+347,V161260,PRE: R description of specific other denomination (open-end)
+348,V161261,PRE: Specific other denomination Christian
+349,V161262a,PRE: (Attends) Specific Jewish denomination
+350,V161262b,PRE: (Nonattendance) Specific Jewish denomination
+351,V161263,PRE: Does Christian R consider self born again
+352,V161264x,PRE: SUMMARY - Full religion summary
+353,V161265x,PRE: SUMMARY - Major group religion summary
+354,V161266a,PRE: Religious identification type: Fundamentalist
+355,V161266b,PRE: Religious identification type: Charismatic/Pentecostal
+356,V161266c,PRE: Religious identification type: Born again
+357,V161266d,PRE: Religious identification type: Evangelical
+358,V161266e,PRE: Religious identification type: Traditional
+359,V161266f,PRE: Religious identification type: Mainline
+360,V161266g,PRE: Religious identification type: Progressive
+361,V161266h,PRE: Religious identification type: Non-traditional
+362,V161266j,PRE: Religious identification type: Secular
+363,V161266k,PRE: Religious identification type: Agnostic
+364,V161266m,PRE: Religious identification type: Atheist
+365,V161266n,PRE: Religious identification type: Spiritual but not religious
+366,V161266p,PRE: Religious identification type: None of the above
+367,V161267,PRE: Respondent age
+368,V161267a,PRE: RESTRICTED- Birthdate: month of birth
+369,V161267b,PRE: RESTRICTED- Birthdate: day of birth
+370,V161267c,PRE: Birthdate: year of birth
+371,V161267x,PRE: SUMMARY - Respondent age group
+372,V161268,PRE: R marital status
+373,V161269,PRE: Domestic partnership status
+374,V161270,PRE: Highest level of Education
+375,V161271,PRE: R high school completion- diploma or GED
+376,V161272,PRE: Spouse partner: Highest Level of Education
+377,V161273,PRE: Spouse high school completion- diploma or GED
+378,V161274a,PRE: Previously served on active duty in armed forces
+379,V161274b,PRE: RESTRICTED- Now serving on active duty in armed forces
+380,V161275x,PRE: SUMMARY - R occupation status 2 digit
+381,V161276x,PRE: SUMMARY - R occupation status 1 digit
+382,V161277,"PRE: Initial R employment status, start of occupation module"
+383,V161278,PRE: Initial status Homemaker student: working now
+384,V161279,PRE: Initial status Homemaker student: job in last 6 mon
+385,V161280a,PRE: RESTRICTED: Initial status retiree - month when retired
+386,V161280b,PRE: RESTRICTED: Initial status retiree - day when retired
+387,V161280c,PRE: Initial status retiree - year when retired
+388,V161281,PRE: Initial status unemployed disabled: R ever work for pay
+389,V161282a,PRE: Text- Past occupation (R ret dis unemp hmkr stud)
+390,V161282b,PRE: Code- Past occupation (R ret dis unemp hmkr stud)
+391,V161283a,PRE: Text- Past industry (R ret dis unemp hmkr stud)
+392,V161283b,PRE: Code- Past industry (R ret dis unemp hmkr stud)
+393,V161284,PRE: Past self-empl status (R ret dis unemp hmkr stud)
+394,V161285,PRE: Past occupation: govt work (R ret dis unemp hmkr stud)
+395,V161286,PRE: Initial status unempl ret disabled: job in last 6 mo
+396,V161287,PRE: Recent occupation: how many hours worked avg week
+397,V161288,PRE: Initial status retired disabled: working now
+398,V161289,PRE: Init status nonworkg ret dis unemp hmkr st: look for work
+399,V161290,PRE: Init status nonworkg ret dis unemp hmkr st: worry find job
+400,V161291a,PRE: Working TLO now - occupation
+401,V161291b,PRE: Working TLO now - occupation
+402,V161292a,PRE: Text- working or TLO industry of occupation
+403,V161292b,PRE: Code- working or TLO industry of occupation
+404,V161293,PRE: Working TLO now - work for self
+405,V161294,PRE: Working TLO now - work for govt
+406,V161295,PRE: Working TLO now - how many hours R works
+407,V161296,PRE: Working TLO now - hours works OK
+408,V161297,PRE: Working TLO now: worry about losing job in near future
+409,V161298,PRE: Working now: out of work or laid off in last 6 mos
+410,V161299,PRE: Working now: had reduction in work hrs or pay cut
+411,V161300a,PRE: Working now - spouse/partner employment status
+412,V161300b,PRE: Temporarily laid off - spouse/partner employment status
+413,V161300c,PRE: Unemployed - spouse/partner employment status
+414,V161300d,PRE: Retired - spouse/partner employment status
+415,V161300e,PRE: Permanently disabled - spouse/partner employment status
+416,V161300f,PRE: Homemaker - spouse/partner employment status
+417,V161300g,PRE: Student - spouse/partner employment status
+418,V161301a,PRE: Spouse partner placeholder redacted
+419,V161301b,PRE: Spouse partner placeholder code
+420,V161302,PRE: Anyone in HH belong to labor union
+421,V161303,PRE: Who in HH belongs to labor union
+422,V161304,PRE: Think of self as belonging to class
+423,V161305a,PRE: Social Class: working or middle
+424,V161305b,PRE: Social Class: had to choose working middle
+425,V161306,PRE: Social class: average or upper working middle class
+426,V161307,PRE: Social class (2-question version)
+427,V161307a,PRE: EGSS social class if middle class
+428,V161308x,PRE: SUMMARY - R self-identified social class
+429,V161309,"PRE: R: Are you Spanish, Hispanic, or Latino"
+430,V161310a,PRE: R self-identified race - White mentioned
+431,V161310b,PRE: R self-identified race -Black/African-American mentioned
+432,V161310c,PRE: R self-identified race - American Indian/Alaska Native mentioned
+433,V161310d,PRE: R self-identified race - Asian mentioned
+434,V161310e,PRE: R self-identified race - Native Hawaiian/Other Pacific Islander mentioned
+435,V161310f,PRE: R self-identified race - other mention
+436,V161310g,PRE: R race other mention type
+437,V161310x,PRE: SUMMARY - R self-identified race
+438,V161311,PRE: RESTRICTED Text- R self-identified ethnic group(s) other than American
+439,V161312a,PRE: RESTRICTED Codes - R self-identified ethnic group(s) other than American
+440,V161313,PRE: FTF ONLY: IWR CHECKPOINT: number of ethnic mentions
+441,V161314,PRE: RESTRICTED - R ethnic group identifies with most
+442,V161314a,PRE: RESTRICTED Code - ethic group most identify with
+443,V161315,PRE: Native status of parents
+444,V161316,"PRE: Rs: born U.S., Puerto Rico, or some other country"
+445,V161317,PRE: How many grandparents born outside the U.S.
+446,V161318,PRE: RESTRICTED - Hispanic country/countries of origin
+447,V161319,PRE: LATINO Rs: RESTRICTED- most family from which country
+448,V161320,PRE: Latino Rs: Mexican heritage:
+449,V161321,PRE: RESTRICTED- NON-US BORN Rs: When did R arrive in U.S.
+450,V161321a,PRE: NON-US BORN Rs: Time period when R arrived in U.S.
+451,V161322,PRE: RESTRICTED- NON-US BORN Rs: In what year did R become a U.S. citizen
+452,V161322a,PRE: NON-US BORN Rs: Time period when R became U.S. citizen
+453,V161323,PRE: LATINO Rs: language at home
+454,V161324,PRE: How many children in HH age 0-17
+455,V161325a,PRE: School enrollment of HH children- public school
+456,V161325b,PRE: School enrollment of HH children- private religious school
+457,V161325c,PRE: School enrollment of HH children- private non-religious school
+458,V161325d,PRE: School enrollment of HH children- home schooling
+459,V161325e,PRE: School enrollment of HH children- not enrolled in school
+460,V161326,PRE: Internet use at home
+461,V161327,PRE: Cell or Landline service
+462,V161328,PRE: Does R personally have a cell phone
+463,V161329,PRE: Is R's cell phone a smartphone
+464,V161330,PRE: Where R grew up
+465,V161331a,PRE: How long lived in this community YRS
+466,V161331b,PRE: How long lived in this community MONTHS
+467,V161331x,PRE: SUMMARY - Length in current community
+468,V161332,PRE: RESTRICTED- (<24 tot mos in community) Zip Code of previous residence
+469,V161333,PRE: RESTRICTED- City/state of previous residence
+470,V161334,PRE: Home ownership
+471,V161335,PRE: Has R ever changed name
+472,V161335a,PRE: RESTRICTED- Year of most recent change
+473,V161336,PRE: Has R ever used an alternate name
+474,V161337,PRE: Years R lived at address
+475,V161338,PRE: RESTRICTED- (<5 years at address) Where did R live five years ago
+476,V161339,PRE: Does R have unexpired govt Drivers license
+477,V161340,PRE: Does R have unexpired govt Passport
+478,V161341,PRE: Does R have other govt ID
+479,V161342,PRE FTF CASI / WEB: R self-identified gender
+480,V161342a,PRE: RESTRICTED - Other gender follow-up
+481,V161343,PRE FTF CASI/WEB: Roughing up protestors
+482,V161344,PRE FTF CASI/WEB: Justified to use violence
+483,V161345,PRE FTF CASI/WEB: Consider yourself a feminist
+484,V161346,PRE FTF CASI/WEB: How well does feminist describe you
+485,V161347,PRE FTF CASI/WEB: How important is being a feminist
+486,V161348,PRE FTF CASI/WEB: How well does anti-feminist describe you
+487,V161349,PRE FTF CASI/WEB: How important is being anti-feminist
+488,V161350,PRE FTF CASI/WEB: Money invested in Stock Market
+489,V161351,PRE FTF CASI/WEB: RESTRICTED- Total income amount
+490,V161352,PRE FTF CASI/WEB: Income amt missing - ge or lt 40K
+491,V161353,PRE FTF CASI/WEB: Income amt missing - ge or lt 20K
+492,V161354,PRE FTF CASI/WEB: Income amt missing - categories lt 20K
+493,V161355,PRE FTF CASI/WEB: Income amt missing - categories 20-40K
+494,V161356,PRE FTF CASI/WEB: Income amt missing - ge or lt 70K
+495,V161357,PRE FTF CASI/WEB: Income amt missing - categories 40-70K
+496,V161358,PRE FTF CASI/WEB: Income amt missing - ge or lt 100K
+497,V161359,PRE FTF CASI/WEB: Income amt missing - categories 70-100K
+498,V161360,PRE FTF CASI/WEB: Income amt missing - categories 100+K
+499,V161361x,PRE FTF CASI/WEB: Pre income summary
+500,V161362,PRE FTF CASI/WEB: Need to be more sensitive talking or people too easily offended
+501,V161363a,PRE FTF CASI/WEB: Mention: Television news programs (morning or evening)
+502,V161363b,PRE FTF CASI/WEB: Mention: Newspapers
+503,V161363c,"PRE FTF CASI/WEB: Mention: Television talk shows, public affairs, or news analysis programs"
+504,V161363d,"PRE FTF CASI/WEB: Mention: Internet sites, chat rooms, or blogs"
+505,V161363e,PRE FTF CASI/WEB: Mention: Radio news or talk shows
+506,V161363f,PRE FTF CASI/WEB: Mention: Have not heard anything about the presidential campaign from a
+507,V161364,PRE FTF CASI/WEB: Mention: TV PROG 20/20
+508,V161365,PRE FTF CASI/WEB: Mention: TV PROG All In with Chris Hayes
+509,V161366,PRE FTF CASI/WEB: Mention: TV PROG The Blacklist
+510,V161367,PRE FTF CASI/WEB: Mention: TV PROG CBS Evening News with Scott Pelley
+511,V161368,PRE FTF CASI/WEB: Mention: TV PROG Criminal Minds
+512,V161369,PRE FTF CASI/WEB: Mention: TV PROG Empire
+513,V161370,PRE FTF CASI/WEB: Mention: TV PROG Hannity
+514,V161371,PRE FTF CASI/WEB: Mention: TV PROG Jimmy Kimmel Live
+515,V161372,PRE FTF CASI/WEB: Mention: TV PROG The Kelly File
+516,V161373,PRE FTF CASI/WEB: Mention: TV PROG Modern Family
+517,V161374,PRE FTF CASI/WEB: Mention: TV PROG NCIS
+518,V161375,PRE FTF CASI/WEB: Mention: TV PROG The Nightly Show with Larry Wilmore
+519,V161376,PRE FTF CASI/WEB: Mention: TV PROG Sunday Night Football
+520,V161377,PRE FTF CASI/WEB: Mention: TV PROG Scorpion
+521,V161378,PRE FTF CASI/WEB: Mention: TV PROG The Simpsons
+522,V161379,PRE FTF CASI/WEB: Mention: TV PROG Today
+523,V161380,PRE FTF CASI/WEB: Mention: TV PROG 60 Minutes
+524,V161381,PRE FTF CASI/WEB: Mention: TV PROG Anderson Cooper 360
+525,V161382,PRE FTF CASI/WEB: Mention: TV PROG CBS This Morning
+526,V161383,PRE FTF CASI/WEB: Mention: TV PROG Dancing with the Stars
+527,V161384,PRE FTF CASI/WEB: Mention: TV PROG Face the Nation
+528,V161385,PRE FTF CASI/WEB: Mention: TV PROG House of Cards
+529,V161386,PRE FTF CASI/WEB: Mention: TV PROG Hardball with Chris Matthews
+530,V161387,PRE FTF CASI/WEB: Mention: TV PROG Judge Judy
+531,V161388,PRE FTF CASI/WEB: Mention: TV PROG Meet the Press
+532,V161389,PRE FTF CASI/WEB: Mention: TV PROG Game of Thrones
+533,V161390,PRE FTF CASI/WEB: Mention: TV PROG NBC Nightly News with Lester Holt
+534,V161391,PRE FTF CASI/WEB: Mention: TV PROG On the Record with Greta Van Susteren
+535,V161392,PRE FTF CASI/WEB: Mention: TV PROG Daredevil
+536,V161393,PRE FTF CASI/WEB: Mention: TV PROG The Rachel Maddow Show
+537,V161394,PRE FTF CASI/WEB: Mention: TV PROG Shark Tank
+538,V161395,PRE FTF CASI/WEB: Mention: TV PROG The Voice
+539,V161396,PRE FTF CASI/WEB: Mention: TV PROG ABC World News with David Muir
+540,V161397,PRE FTF CASI/WEB: Mention: TV PROG Blue Bloods
+541,V161398,PRE FTF CASI/WEB: Mention: TV PROG Conan
+542,V161399,PRE FTF CASI/WEB: Mention: TV PROG Dateline NBC
+543,V161400,PRE FTF CASI/WEB: Mention: TV PROG Good Morning America
+544,V161401,PRE FTF CASI/WEB: Mention: TV PROG Hawaii Five-O
+545,V161402,PRE FTF CASI/WEB: Mention: TV PROG Madam Secretary
+546,V161403,PRE FTF CASI/WEB: Mention: TV PROG Nancy Grace
+547,V161404,PRE FTF CASI/WEB: Mention: TV PROG Erin Burnett OutFront
+548,V161405,PRE FTF CASI/WEB: Mention: TV PROG PBS News Hour
+549,V161406,PRE FTF CASI/WEB: Mention: TV PROG Scandal
+550,V161407,PRE FTF CASI/WEB: Mention: TV PROG The Big Bang Theory
+551,V161408,PRE FTF CASI/WEB: Mention: TV PROG The Late Show with Stephen Colbert
+552,V161409,PRE FTF CASI/WEB: Mention: TV PROG The O'Reilly Factor
+553,V161410,PRE FTF CASI/WEB: Mention: TV PROG The Tonight Show Starring Jimmy Fallon
+554,V161411,PRE FTF CASI/WEB: Mention: TV PROG Alpha House
+555,V161412,PRE FTF CASI/WEB: Mention: TV PROG Al Punto
+556,V161413,PRE FTF CASI/WEB: Mention: TV PROG Al Rojo Vivo
+557,V161414,PRE FTF CASI/WEB: Mention: TV PROG Aqui y Ahora
+558,V161415,PRE FTF CASI/WEB: Mention: TV PROG CNN en Espanol
+559,V161416,PRE FTF CASI/WEB: Mention: TV PROG Despierta America
+560,V161417,PRE FTF CASI/WEB: Mention: TV PROG El Gordo y La Flaca
+561,V161418,PRE FTF CASI/WEB: Mention: TV PROG Enfoque
+562,V161419,PRE FTF CASI/WEB: Mention: TV PROG Hoy
+563,V161420,PRE FTF CASI/WEB: Mention: TV PROG Lo Mejor de Caso Cerrado
+564,V161421,PRE FTF CASI/WEB: Mention: TV PROG Noticiero Enrique Gratas
+565,V161422,PRE FTF CASI/WEB: Mention: TV PROG Noticiero Telemundo
+566,V161423,PRE FTF CASI/WEB: Mention: TV PROG Noticiero Univision
+567,V161424,PRE FTF CASI/WEB: Mention: TV PROG El Senor de los Cielos
+568,V161425,PRE FTF CASI/WEB: Mention: TV PROG Que Noche! con Angelica y Raul
+569,V161426,PRE FTF CASI/WEB: Mention: TV PROG Primer Impacto
+570,V161427,PRE FTF CASI/WEB: Mention: TV PROG Cronicas de Sabado
+571,V161428,PRE FTF CASI/WEB: Mention: Radio PROG Rush Limbaugh
+572,V161429,PRE FTF CASI/WEB: Mention: Radio PROG Morning Edition (NPR)
+573,V161430,PRE FTF CASI/WEB: Mention: Radio PROG The Sean Hannity Show
+574,V161431,PRE FTF CASI/WEB: Mention: Radio PROG All Things Considered (NPR)
+575,V161432,PRE FTF CASI/WEB: Mention: Radio PROG Marketplace (NPR)
+576,V161433,PRE FTF CASI/WEB: Mention: Radio PROG The Glenn Beck Program
+577,V161434,PRE FTF CASI/WEB: Mention: Radio PROG The Mark Levin Show
+578,V161435,PRE FTF CASI/WEB: Mention: Radio PROG The Savage Nation (Michael Savage)
+579,V161436,PRE FTF CASI/WEB: Mention: Radio PROG Fresh Air (NPR)
+580,V161437,PRE FTF CASI/WEB: Mention: Radio PROG The Hugh Hewitt Show
+581,V161438,PRE FTF CASI/WEB: Mention: Radio PROG The Thom Hartmann Program
+582,V161439,PRE FTF CASI/WEB: Mention: Radio PROG Joe Madison (The Black Eagle)
+583,V161440,PRE FTF CASI/WEB: Mention: Radio PROG The Mike Gallagher Show
+584,V161441,PRE FTF CASI/WEB: Mention: Radio PROG The Bill Handel Show
+585,V161442,PRE FTF CASI/WEB: Mention: Radio PROG The Schnitt Show (Todd Schnitt)
+586,V161443,PRE FTF CASI/WEB: Mention: Radio PROG None of the above
+587,V161444,PRE FTF CASI/WEB: Mention: Website Yahoo News (www.yahoo.com/news)
+588,V161445,PRE FTF CASI/WEB: Mention: Website CNN.com
+589,V161446,PRE FTF CASI/WEB: Mention: Website NBC News (www.nbcnews.com)
+590,V161447,PRE FTF CASI/WEB: Mention: Website Huffington Post (www.huffingtonpost.com)
+591,V161448,PRE FTF CASI/WEB: Mention: Website CBS News (www.cbsnews.com)
+592,V161449,PRE FTF CASI/WEB: Mention: Website USA Today (usatoday.com)
+593,V161450,PRE FTF CASI/WEB: Mention: Website Buzzfeed.com
+594,V161451,PRE FTF CASI/WEB: Mention New York Times (nytimes.com)
+595,V161452,PRE FTF CASI/WEB: Mention: Website Fox News (www.foxnews.com)
+596,V161453,PRE FTF CASI/WEB: Mention: Website Mail Online / Daily Mail (dailymail.co.uk)
+597,V161454,PRE FTF CASI/WEB: Mention: Website Washington Post (washingtonpost.com)
+598,V161455,PRE FTF CASI/WEB: Mention: Website Business Insider (businessinsider.com)
+599,V161456,PRE FTF CASI/WEB: Mention: Website BBC News (news.bbc.co.uk)
+600,V161457,PRE FTF CASI/WEB: Mention: Website The Guardian (theguardian.com)
+601,V161458,PRE FTF CASI/WEB: Mention: Website ABC News (abcnews.com)
+602,V161459,PRE FTF CASI/WEB: Mention: Website Other
+603,V161460,PRE FTF CASI/WEB: Mention: Website None
+604,V161461x,PRE FTF CASI/WEB: SUMMARY- Number of additional preloaded newspapers
+605,V161462,PRE FTF CASI/WEB: RESTRICTED- 5th newspaper
+606,V161463,PRE FTF CASI/WEB: RESTRICTED- 6th newspaper
+607,V161464,PRE FTF CASI/WEB: RESTRICTED- 7th newspaper
+608,V161465,PRE FTF CASI/WEB: RESTRICTED- 8th newspaper
+609,V161466,PRE FTF CASI/WEB: RESTRICTED- 9th newspaper
+610,V161467,PRE FTF CASI/WEB: RESTRICTED- 10th newspaper
+611,V161468,PRE FTF CASI/WEB: RESTRICTED- 11th newspaper
+612,V161469,PRE FTF CASI/WEB: Mention: Printed newspaper The New York Times
+613,V161470,PRE FTF CASI/WEB: Mention: Printed newspaper USA Today
+614,V161471,PRE FTF CASI/WEB: Mention: Printed newspaper The Wall Street News
+615,V161472,PRE FTF CASI/WEB: Mention: Printed newspaper The Washington Post
+616,V161473,PRE FTF CASI/WEB: Mention: Printed newspaper pnews[5]
+617,V161474,PRE FTF CASI/WEB: Mention: Printed newspaper pnews[6]
+618,V161475,PRE FTF CASI/WEB: Mention: Printed newspaper pnews[7]
+619,V161476,PRE FTF CASI/WEB: Mention: Printed newspaper pnews[8]
+620,V161477,PRE FTF CASI/WEB: Mention: Printed newspaper pnews[9]
+621,V161478,PRE FTF CASI/WEB: Mention: Printed newspaper pnews[10]
+622,V161479,PRE FTF CASI/WEB: Mention: Printed newspaper pnews[11]
+623,V161480,PRE FTF CASI/WEB: Mention: Other printed newspaper
+624,V161481,PRE FTF CASI/WEB: Mention: No printed newspaper
+625,V161482,PRE FTF CASI/WEB: Mention: www.nytimes.com (New York
+626,V161483,PRE FTF CASI/WEB: Mention: www.usatoday.com (USA
+627,V161484,PRE FTF CASI/WEB: Mention: online.wsj.com (Wall Street Journal)
+628,V161485,PRE FTF CASI/WEB: Mention: www.washingtonpost.com (Washington Post)
+629,V161486,PRE FTF CASI/WEB: Mention: Online newspaper inews[5]
+630,V161487,PRE FTF CASI/WEB: Mention: Online newspaper inews[6]
+631,V161488,PRE FTF CASI/WEB: Mention: Online newspaper inews[7]
+632,V161489,PRE FTF CASI/WEB: Mention: Online newspaper inews[8]
+633,V161490,PRE FTF CASI/WEB: Mention: Online newspaper inews[9]
+634,V161491,PRE FTF CASI/WEB: Mention: Online newspaper inews[10]
+635,V161492,PRE FTF CASI/WEB: Mention: Online newspaper inews[11]
+636,V161493,PRE FTF CASI/WEB: Mention: Other online newspaper
+637,V161494,PRE FTF CASI/WEB: Mention: No online newspaper
+638,V161495,PRE FTF CASI/WEB: No.days in wk R uses soc media to learn Pres electn
+639,V161496,PRE FTF CASI / WEB: How many Guns owned
+640,V161497,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set B
+641,V161498,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set D
+642,V161499,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set E
+643,V161500,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set F
+644,V161501,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set G
+645,V161502,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set H
+646,V161503,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set J
+647,V161504,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set K
+648,V161505,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set L
+649,V161506,PRE FTF CASI / WEB: Correct or incorrect- WORDSUM set O
+650,V161507,PRE FTF CASI / WEB: Innocent remarks as sexist
+651,V161508,PRE FTF CASI / WEB: Women fail to appreciate what men do for them
+652,V161509,PRE FTF CASI / WEB: Women seek to gain power by getting control over men
+653,V161510,PRE FTF CASI / WEB: Women put men on a tight leash
+654,V161511,PRE FTF CASI / WEB: Sexual orientation of R
+655,V161512,PRE FTF CASI / WEB: Sexual orientation of family and friends
+656,V161513,PRE FTF CASI / WEB: Years Senator Elected
+657,V161514,PRE FTF CASI / WEB: Political knowledge: program Fed govt spends
+658,V161515,PRE FTF CASI / WEB: Party with Most Members In House Before Election
+659,V161516,PRE FTF CASI / WEB: Party with Most Members In Senate Before Election
+660,V161517,PRE WEB ONLY: ease of online access
+661,V161518,PRE FTF CASI ONLY: R rating of interviewer
+662,V161519,PRE FTF CASI ONLY: R rating of interviewer degree
+663,V161520,PRE FTF CASI ONLY: R rating of interview
+664,V161521,PRE FTF CASI ONLY: R rating of interview degree
+665,V161522,PRE: How satisfied is R with life
+666,V161523,PRE WEB ONLY: RESTRICTED R comments
+667,V162001,POST: FTF ONLY: Audio recording consent
+668,V162002,POST: How many programs about 2016 campaign did R watch on TV
+669,V162003,POST: How many speeches about 2016 campaign did R listen to on radio
+670,V162004,POST: How many times R got info about 2016 campaign on the Internet
+671,V162005,POST: How many stories R read about 2016 campaign in any newspaper
+672,V162006,POST: Did R visit website of candidate
+673,V162007,POST: Did party contact R about 2016 campaign
+674,V162007a,POST: Which party contacted R about 2016 campaign
+675,V162008,POST: Did anyone other than parties contact R about cands
+676,V162009,POST: Anyone talk to R abt registering or getting out to vote
+677,V162010,POST: R talk to anyone about voting for or against cand or pty
+678,V162011,"POST: R go to any political meetings, rallies, speeches"
+679,V162012,POST: R wear campaign button or post sign or bumper sticker
+680,V162013,POST: R do any (other) work for party or candidate
+681,V162014,POST: R contribute money to specific candidate campaign
+682,V162014a,POST: Party of candidate for whom R contributed money
+683,V162014b,POST: RESTRICTED- Other specify - party of candidate for whom R contributed
+684,V162016,POST: R contribute money to political party
+685,V162016a,POST: Party to which R contributed
+686,V162016b,POST: RESTRICTED- Other specify - party to which R contributed
+687,V162017,POST: R contribute to any other group for/against a cand
+688,V162018a,POST: DHS: Has R in past 12 months: joined a protest march
+689,V162018b,POST: DHS: Has Rin past 12 months: signed petition
+690,V162018c,POST: DHS: Has R in past 12 months: given money to relig org
+691,V162018d,POST: DHS: Has R in past 12 months: gave money to soc/pol org
+692,V162018e,POST: DHS: sent a message on Facebook/Twitter about polit iss
+693,V162019,POST: Contact U.S. Representative or Senator
+694,V162020a,POST: Who did R contact: was it U.S. Senator from R's state
+695,V162020c,POST: Who did R contact: was it R's district U.S. Representative
+696,V162020b,POST: Who did R contact: was it U.S. Senator from another state
+697,V162020d,POST: Who did R contact: was it other U.S. Representative
+698,V162021a,POST: Vote section- order of major party candidate names / FTF Ballot Color
+699,V162021b,POST: Vote section- household address preloaded (sample address)
+700,V162021c,POST: Vote section- candidate names preloaded for sample address
+701,V162022,POST: R registered to vote (Post-election)
+702,V162022a,POST WEB: Is R registered (registration address not answered)
+703,V162023,POST: Address of registration given (not registered at sample address)
+704,V162024a,POST: State included in address of registration (not registered at samp addr)
+705,V162024b,POST: City included in Post address of registration (not registered at samp addr)
+706,V162025,POST: State of registration - reg state not given (not registered at samp addr)
+707,V162026a,POST: State of regist for Post vote section (Pre nonvoter; reg state given Pre or Post)
+708,V162026b,POST: State of regist for Post vote section same as sample address state
+709,V162026c,POST: Senate race in state of registration (all registrations)
+710,V162026d,POST: Governor race in state of registration (all registrations)
+711,V162026e,POST: Party registration in state of registration (all registrations)
+712,V162027,POST: Is R registered to vote in preload county (not reg at sample address)
+713,V162028,POST: How many years has R been registered at registration location
+714,V162028x,PRE-POST: SUMMARY- years has R been registered at registration location
+715,V162029,POST: Was name recorded for registration name
+716,V162029x,PRE-POST: SUMMARY - Name recorded for registration name
+717,V162030,POST: Party of registration
+718,V162030x,PRE-POST: SUMMARY - Party of registration
+719,V162031,POST: Did R vote in the November 2016 elections
+720,V162031x,PRE-POST: SUMMARY -Did R vote in 2016
+721,V162032x,POST: SUMMARY - Post Registration and vote status
+722,V162033,POST: FTF ONLY: IWR CHECKPOINT: have correct Post ballot card
+723,V162033a,POST: FTF ONLY: IWR error at Ballot Card checkpoint
+724,V162033x,POST: SUMMARY - administration of Post vote module
+725,V162034,POST: Did R vote for President
+726,V162034a,POST: For whom did R vote for President
+727,V162035,POST: Preference strong for Pres cand for whom R voted
+728,V162036,POST: Text- How long before election R made decision Pres vote
+729,V162036a,POST: Code- How long before election R made decision Pres vote
+730,V162037,POST: Does R prefer Pres cand (did not vote)
+731,V162037a,POST: Preference for Pres cand (did not vote)
+732,V162038,POST: Preference strong for Pres cand (did not vote)
+733,V162038x,POST: SUMMARY- Preference for Pres cand (did not vote)
+734,V162039,POST: Did R vote for U.S. House of Representatives
+735,V162040,POST: For whom did R vote for U.S. House (ballot card)
+736,V162041,POST: For whom did R vote for U.S. House (no ballot card)
+737,V162042,POST: Does R prefer U.S. House candidate
+738,V162043,POST: Whom does R prefer for U.S. House (ballot card)
+739,V162044,POST: Whom does R prefer for U.S. House (no ballot card)
+740,V162045x,POST SUMMARY: Senate and Governor races
+741,V162046,POST: Did R vote for U.S. Senate
+742,V162047,POST: R's vote for U.S. Senate (ballot card)
+743,V162048,POST: R's vote for U.S. Senate (no ballot card)
+744,V162049,POST: Does R prefer U.S. Senate candidate
+745,V162050,POST: Whom does R prefer for U.S. Senate (ballot card)
+746,V162051,POST: Whom does R prefer for U.S. Senate (no ballot card)
+747,V162052,POST: Did R vote for governor
+748,V162053,POST: R's vote for governor(ballot card)
+749,V162054,POST: R's vote for governor (no ballot card)
+750,V162055,POST: Does R prefer gubernatorial candidate
+751,V162056,POST: Whom does R prefer for governor (ballot card)
+752,V162057,POST: Whom does R prefer for governor (no ballot card)
+753,V162058x,POST: SUMMARY -Post-election Presidential vote/pref
+754,V162059x,POST: SUMMARY - party of Post-election U.S. House vote/preference
+755,V162060x,POST: SUMMARY - party of Post-election U.S. Senate vote/preference
+756,V162061x,POST: SUMMARY - party of Post-election gubernatorial vote/pref
+757,V162062x,2016 PRE-POST VOTE SUMMARY: 2016 Presidential vote
+758,V162063x,2016 PRE-POST VOTE SUMMARY: 2016 Pre intent vote for Pres - Post vote for Pres
+759,V162064x,2016 PRE-POST NONVOTER SUMMARY: 2016 Pre pref for Pres - Post pref for Pres
+760,V162065x,2016 PRE-POST REG/TURNOUT SUMMARY: 2016 registration - turnout status
+761,V162066x,2016 PRE-POST VOTE SUMMARY: 2016 Presidential vote w/strength
+762,V162067x,2016 PRE-POST VOTE SUMMARY: party of 2016 U.S. House vote
+763,V162068x,2016 PRE-POST VOTE SUMMARY: party of 2016 U.S. Senate vote
+764,V162069x,2016 PRE-POST VOTE SUMMARY: party of 2016 Governor vote
+765,V162072,POST: Office recall: Vice-President Biden
+766,V162073a,POST: Office recall: Speaker of the House Ryan
+767,V162073b,POST: Office recall: Speaker of the House Ryan [Scheme 2]
+768,V162074a,POST: Office recall: Chancellor of Germany Merkel
+769,V162074b,POST: Office recall: Chancellor of Germany Merkel [Scheme 2]
+770,V162075a,POST: Office recall: President of Russia Putin
+771,V162075b,POST: Office recall: President of Russia Putin [Scheme 2]
+772,V162076a,POST: Office recall: US Supreme Ct Chief Justice Roberts
+773,V162076b,POST: Office recall: US Supreme Ct Chief Justice Roberts [Scheme 2]
+774,V162078,POST: Feeling thermometer: Democratic Presidential candidate
+775,V162079,POST: Feeling thermometer: Republican Presidential candidate
+776,V162080,POST: Feeling thermometer: Libertarian Presidential candidate
+777,V162081,POST: Feeling thermometer: Green Party Presidential candidate
+778,V162082,POST: Feeling thermometer: HOUSE DEMOCRATIC CANDIDATE
+779,V162083,POST: Feeling thermometer: HOUSE REPUBLICAN CANDIDATE
+780,V162084,POST: Feeling thermometer: HOUSE IND/3rd-PARTY CANDIDATE
+781,V162085,POST: Feeling thermometer: SENATE DEMOCRATIC CANDIDATE
+782,V162086,POST: Feeling thermometer: SENATE REPUBLICAN CANDIDATE
+783,V162087,POST: Feeling thermometer: SENATE IND/3rd-PARTY CANDIDATE
+784,V162088,POST: Feeling thermometer: SR. SENATOR IN STATE WITHOUT RACE
+785,V162089,POST: Feeling thermometer: JR. SENATOR IN STATE WITHOUT RACE
+786,V162090,POST: Feeling thermometer: NONRUNNING SENATOR IN STATE W/RACE
+787,V162091,POST: Feeling thermometer: Democratic Vice Presidential cand
+788,V162092,POST: Feeling thermometer: Republican Vice Presidential cand
+789,V162093,POST: Feeling thermometer: John Roberts
+790,V162094,POST: Feeling thermometer: Pope Francis
+791,V162095,POST: Feeling thermometer: CHRISTIAN FUNDAMENTALISTS
+792,V162096,POST: Feeling thermometer: FEMINISTS
+793,V162097,POST: Feeling thermometer: LIBERALS
+794,V162098,POST: Feeling thermometer: LABOR UNIONS
+795,V162099,POST: Feeling thermometer: POOR PEOPLE
+796,V162100,POST: Feeling thermometer: BIG BUSINESS
+797,V162101,POST: Feeling thermometer: CONSERVATIVES
+798,V162102,POST: Feeling thermometer: THE U.S. SUPREME COURT
+799,V162103,POST: Feeling thermometer: GAY MEN AND LESBIANS
+800,V162104,POST: Feeling thermometer: CONGRESS
+801,V162105,POST: Feeling thermometer: RICH PEOPLE
+802,V162106,POST: Feeling thermometer: MUSLIMS
+803,V162107,POST: Feeling thermometer: CHRISTIANS
+804,V162108,POST: Feeling thermometer: JEWS
+805,V162109,POST: Feeling thermometer: TEA PARTY
+806,V162110,POST: Feeling thermometer: POLICE
+807,V162111,POST: Feeling thermometer: TRANSGENDER PEOPLE
+808,V162112,POST: Feeling thermometer: SCIENTISTS
+809,V162113,POST: Feeling thermometer: BLACK LIVES MATTER
+810,V162114,POST: Approve or disapprove of House incumbent
+811,V162114a,POST: How much approve House incumbent
+812,V162114b,POST: How much disapprove House incumbent
+813,V162114x,POST: SUMMARY- House incumbent approval
+814,V162115,POST: How good a job does House incumbent do in district
+815,V162116a,POST: Mention 1 most important problems facing the country
+816,V162117,POST: Party to deal with mention 1 MIP
+817,V162118a,POST: Mention 2 most important problems facing the country
+818,V162119,POST: Party to deal with mention 2 MIP
+819,V162120a,POST: Mention 3 most important problems facing the country
+820,V162121,POST: Party to deal with mention 3 MIP
+821,V162122a,POST: Which among mentions is the most important problem
+822,V162123,POST: Better if rest of world more like America
+823,V162124,POST: How does R feel to see American flag
+824,V162125,POST: How good/bad does R feel to see American flag
+825,V162125x,POST: SUMMARY- How good/bad does R feel to see American flag
+826,V162126,POST: Heard about Rep Presidential cand Trump 2005 video about women
+827,V162127,POST: Does Rep Presidential cand Trump 2005 video about women matter
+828,V162128,POST: Think of self as belonging to class
+829,V162129,POST: Is R working or middle class
+830,V162130,POST: If R had to choose working/ middle class
+831,V162131,POST: Average or upper working/ middle class
+832,V162132,POST: R social class
+833,V162133,"POST: Is R upper middle, middle, lower middle class"
+834,V162134,POST: How much opportunity in America to get ahead
+835,V162135,POST: Economic mobility compared to 20 yrs ago
+836,V162136,POST: How much easier/harder is econ mobility compared to 20 yrs ago
+837,V162136x,POST: SUMMARY- Economic mobility easier/harder compared to 20 yrs ago
+838,V162137,POST: What is current unemployment rate
+839,V162138,POST: What is minimum wage in R state
+840,V162139,POST: Importance of reducing deficit
+841,V162140,POST: Does R favor or oppose tax on millionaires
+842,V162141,POST: How often bought or boycotted product or service for pol/soc reason
+843,V162142,POST: Health Care Law effect on health care services
+844,V162143,POST: Health Care Law effect on number insured
+845,V162144,POST: Health Care Law effect on cost of health care
+846,V162145,POST: Health Care Law effect on cost of R's health care
+847,V162146,POST: Does R favor or oppose vaccines in schools
+848,V162147,POST: How much favor or oppose vaccines in schools
+849,V162147x,POST: SUMMARY- Favor/oppose vaccines in schools
+850,V162148,POST: Does R favor or oppose govt reducing income ineqality
+851,V162149,POST: Does R favor or oppose requiring equal pay for men and women
+852,V162150,POST: How much favor or oppose requiring equal pay for men and women
+853,V162150x,POST: SUMMARY- Favor/oppose equl pay for men and women
+854,V162151,POST: Changes in security at public places
+855,V162152a,POST: Does R favor or oppose limits on foreign imports [REV]
+856,V162152b,POST: Does R favor or oppose limits on foreign imports [STD]
+857,V162153,POST: Is U.S. too supportive of Israel or not supportive enough
+858,V162154a,POST: How much U.S. support Israel in conflict w/Palestinians [ISR 1st]
+859,V162154b,POST: How much U.S. support Palestinians in conflict w/Israel [ISR 1st]
+860,V162155a,POST: How much U.S. support Palestinians in conflict w/Israel [PAL 1st]
+861,V162155b,POST: How much U.S. support Israel in conflict w/Palestinians [PAL 1st]
+862,V162155x,POST: SUMMARY- How much should U.S. support Israelis
+863,V162156x,POST: SUMMARY- How much should U.S. support Palestinians
+864,V162157,POST: What should immigration levels be
+865,V162158,POST: How likely immigration will take away jobs
+866,V162159,POST: China military threat
+867,V162160,POST: How worried about terrist attack next 12 months
+868,V162161,POST: Health benefits of vaccinations outweigh risks
+869,V162162,POST: Vaccinations benefit/risk strength
+870,V162162x,POST: SUMMARY- Benefits/risks of vaccinations
+871,V162163,POST: Put off checkup and vaccines
+872,V162164,POST: Will you pay all costs
+873,V162165,POST: Worry about financial situation
+874,V162166,POST: Able to make housing payments
+875,V162167,POST: Anyone lost jobs
+876,V162168,POST: Country needs free thinkers
+877,V162169,POST: Country would be great by getting rid of rotten apples
+878,V162170,POST: Country needs strong leader to take us back to true path
+879,V162171,POST: 7pt scale liberal-Conservate: self placement
+880,V162171a,"POST: If had to choose, liberal or conservative"
+881,V162172,POST: 7pt scale liberal-conservative: Democratic House cand
+882,V162173,POST: 7pt scale liberal-conservative: Republican House cand
+883,V162174,POST: Ever discuss politics with family or friends
+884,V162174a,POST: Days in past week discussed politics
+885,V162175,POST: Is increasing trade w/other countries good for U.S.
+886,V162176,POST: Does R favor or oppose free trade agreements w/other countries
+887,V162176a,POST: How strongly favor/oppose free trade agreements w/other countries
+888,V162176x,POST: SUMMARY- Favor/oppose free trade agreements
+889,V162177,POST: Should govt encourage/discourage outsourcing
+890,V162178,POST: Has increase in govt wiretap powers gone too far
+891,V162179,POST: Should marijuana be legal
+892,V162180,POST: Should gov do more or less to regulate banks
+893,V162180a,POST: How much more or less should gov do to regulate banks
+894,V162180x,POST: SUMMARY- Gov should do more/less to regulate banks
+895,V162181,POST: STD Abortion: Democratic Presidential cand placemt
+896,V162182,POST: STD Abortion: Republican Presidential cand placemt
+897,V162183,POST: Govt bigger because too involved OR bigger problems
+898,V162184,POST: Need strong govt for complex problems OR free market
+899,V162185,POST: Less govt better OR more that govt should be doing
+900,V162186,POST: Regulation of Business
+901,V162188,POST: How does Rep Presidential candidate treat women
+902,V162188a,POST: How well/poorly does Rep Presidential candidate treat women
+903,V162188x,POST: SUMMARY- How does Rep Presidential candidate treat women
+904,V162189,POST: How does Dem Presidential candidate treat women
+905,V162189a,POST: How well/poorly does Dem Presidential candidate treat women
+906,V162189x,POST: SUMMARY- How does Dem Presidential candidate treat women
+907,V162190,POST: Important differences in what major parties stand for
+908,V162191,POST: Is one of the parties more conservative than the other
+909,V162191a,POST: Which is the party that is more conservative
+910,V162192,POST: Should the minimum wage be raised
+911,V162193,POST: Increase or decrease gov spending to help people pay for health care
+912,V162193a,POST: How much favor increase/decrease gov help paying for health care
+913,V162193x,POST: SUMMARY- Increase/decrease gov spending for health care
+914,V162194,POST: Number of organizations in which R is a member
+915,V162195,POST: Has R done community work in past 12 months
+916,V162196,POST: Did R attend meeting on school/community issue past 12 months
+917,V162197,POST: Has R done any volunteer work in past 12 months
+918,V162198,POST: Has R contacted elected federal official in past 12 months
+919,V162199a,POST: Why has R contacted elected federal official
+920,V162200,POST: Has R contacted non-elected federal official in past 12 months
+921,V162201a,POST: Why has R contacted non-elected federal official
+922,V162202,POST: Has R contacted elected local official in past 12 months
+923,V162203a,POST: Why as R contacted elected local official
+924,V162204,POST: Has R contacted non-elected local official in past 12 months
+925,V162205a,POST: Why has R contacted non-elected local official
+926,V162207,POST: Agree/disagree: world is changing and we should adjust
+927,V162208,POST: Agree/disagree: newer lifestyles breaking down society
+928,V162209,POST: Agree/disagree: be more tolerant of other moral stds
+929,V162210,POST: Agree/disagree: more emphasis on traditional family values
+930,V162211,POST: Agree/disagree: blacks shd work way up w/o special favors
+931,V162212,POST: Agree/disagree: past slavery make more diff for blacks
+932,V162213,POST: Agree/disagree: blacks have gotten less than deserve
+933,V162214,POST: Agree/disagree: blacks must try harder to get ahead
+934,V162215,POST: [STD] Publ officials don't care what people think
+935,V162216,POST: [STD] Have no say about what govt does
+936,V162217,POST: [REV] Politics/govt too complicated to understand
+937,V162218,POST: [REV] Good understanding of political issues
+938,V162219,POST: Electoral integrity Post: are votes counted fairly
+939,V162220,POST: Electoral integrity Post: do the rich buy elections
+940,V162221,POST: How important that more Hispanics get elected
+941,V162222,POST: HISPANIC: news in English or Spanish
+942,V162223,POST: HISPANIC: how much R uses English or Spanish
+943,V162224,POST: Hisp R: life be affected by what happens to Hispanics
+944,V162225,POST: Black R: life be affected by what happens to blacks
+945,V162226,POST: Asian R: life be affected by what happens to Asians
+946,V162227,POST: How important that more women get elected
+947,V162228,POST: Easier or harder for working mother to bond with child
+948,V162229a,POST: How much easier for working mother to bond with child
+949,V162229b,POST: How much harder for working mother to bond with child
+950,V162229x,POST: SUMMARY- Working mother's bond with child
+951,V162230,POST: Better if man works and woman takes care of home
+952,V162230a,POST: How much better if man works and woman at home
+953,V162230b,POST: How much worse if man works and woman at home
+954,V162230x,POST: SUMMARY- Better if man works and woman takes care of home
+955,V162231,POST: Media pay more attention to discrimination
+956,V162231a,POST: How much more attn should media pay to discrim against women
+957,V162231b,POST: How much less attn should media pay to discrim against women
+958,V162231x,POST: SUMMARY- How much attn media should pay to discrim against women
+959,V162232,POST: Do women demanding equality seek special favors
+960,V162233,POST: Do women complaining about discrim cause more problems
+961,V162234,POST: Does R favor or oppose limits on campaign spending
+962,V162235,POST: How much does Cong pass laws that benefit contributor organizations
+963,V162236,POST: How much does Cong pass laws that benefit contributor individuals
+964,V162238,POST: For or against preferential hiring/promotion of blacks
+965,V162238a,POST: Strength favor preferential hiring/promotion of blacks
+966,V162238b,POST: Strength oppose preferential hiring/promotion blacks
+967,V162238x,POST: SUMMARY- Favor preferential hiring and promotion of blacks
+968,V162239,POST: Child trait more important: independence or respect
+969,V162240,POST: Child trait more important: curiosity or good manners
+970,V162241,POST: Child trait more important: obedience or self-reliance
+971,V162242,POST: Child trait more important: considerate or well-behaved
+972,V162243,POST: Society should make sure everyone has equal opportunity
+973,V162244,POST: We'd be better off if worried less about equality
+974,V162245,POST: Not a big problem if some have more chance in life
+975,V162246,POST: If people were treated more fairly would be fewer probs
+976,V162248,POST: R likes to have strong opinions even when not personally involved
+977,V162249,POST: R forms opinions about everything
+978,V162250,POST: Important for R to hold strong opinions
+979,V162251,POST: It bothers R to remain neutral
+980,V162252,POST: R has many more opinions than the average person
+981,V162253,POST: R would rather have strong opinion than no opinion
+982,V162254,POST: Did the U.S. government know about 9/11 in advance
+983,V162255,POST: Is Barack Obama Muslim
+984,V162255a,POST: How sure is R that Obama is/isn't Muslim
+985,V162255x,POST: SUMMARY- Barack Obama is/isn't Muslim
+986,V162256,POST: R's interest in politics
+987,V162257,POST: R follows politics in media
+988,V162258,POST: R understands most important political issues
+989,V162259,POST: Compromise in politics is selling out on one's principles
+990,V162260,POST: Most politicians do not care about the people
+991,V162261,POST: Most politicians are trustworty
+992,V162262,POST: Politicians are the main problem in the U.S.
+993,V162263,POST: Strong leader is good for U.S. even if bends rules to get things done
+994,V162264,POST: People not politicians should make most important policy decisions
+995,V162265,POST: Most politicians only care about interests of rich and powerful
+996,V162266,POST: Minorities should adapt to to customs/traditions of U.S.
+997,V162267,POST: The will of the majority should always prevail
+998,V162268,POST: Immigrants are generally good for America's economy
+999,V162269,POST: America's culture is generally harmed by immigrants
+1000,V162270,POST: Immigrants increase crime rates in the U.S.
+1001,V162271,POST: To be truly American important to have been born in U.S.
+1002,V162272,POST: To be truly American important to have American ancestry
+1003,V162273,POST: To be truly American important to speak English
+1004,V162274,POST: To be truly American important to follow America's customs/traditions
+1005,V162275,POST: How widespread is corruption among politicians in U.S.
+1006,V162276,POST: Gov should take measures to reduce differences in income levels
+1007,V162277,POST: Gov done a good or bad job in last 8 years
+1008,V162278,POST: Any parties in the U.S. represent R's views
+1009,V162279,POST: Which party represents views best
+1010,V162280,POST: CSES: State of economy
+1011,V162281,POST: CSES: 5pt scale: make a difference who is in power
+1012,V162282,POST: CSES: 5pt scale: make a difference who one votes for
+1013,V162283,POST: CSES: 10pt scale: like-dislike Democratic Party
+1014,V162284,POST: CSES: 10pt scale: like-dislike Republican Party
+1015,V162285,POST: CSES: 10pt scale: like-dislike Democratic Pres cand
+1016,V162286,POST: CSES: 10pt scale: like-dislike Republican Pres cand
+1017,V162287,POST: CSES: 10pt scale: left-right Democratic Party
+1018,V162288,POST: CSES: 10pt scale: left-right Republican Party
+1019,V162289,POST: CSES: 10pt scale: left-right self placement
+1020,V162290,POST: CSES: Satisfied with way democracy works in the U.S
+1021,V162291,POST: CSES: Close to any political party
+1022,V162292a,POST: CSES: Which party R is closest to
+1023,V162293,POST: CSES: Closer to one party
+1024,V162292b,POST: CSES: Degree closeness
+1025,V162294,POST: DHS: How worried about terrorist attack in next 12 months
+1026,V162295,POST: DHS: Favor or oppose torture for suspected terrorists
+1027,V162295a,POST: DHS: How much favor torture for suspected terrorists
+1028,V162295b,POST: DHS: How much oppose torture for suspected terrorists
+1029,V162295x,POST: SUMMARY- Favor/oppose torture for suspected terrorists
+1030,V162296a,POST: FTF CASI/WEB: WEB ONLY: R has any living sons or daughters
+1031,V162296b,POST: FTF CASI/WEB: FTF ONLY: R has any living sons or daughters (2nd mention - order)
+1032,V162296c,POST: FTF CASI/WEB: WEB ONLY: R has any living sons or daughters
+1033,V162296x,POST: FTF CASI/WEB: FTF/WEB: SUMMARY- R has living sons or daughters
+1034,V162297,POST: FTF CASI/WEB: In past 12 months any family membered stopped/questioned by police
+1035,V162298,POST: FTF CASI/WEB: Has R ever been arrested
+1036,V162299,POST: FTF CASI/WEB: RESTRICTED- CASI/WEB: Total income amount
+1037,V162299a,POST: FTF CASI/WEB:Confirm total income amount
+1038,V162300,POST: FTF CASI/WEB: Total income amt missing - ge or lt 40K
+1039,V162301,POST: FTF CASI/WEB: Total income amt missing - ge or lt 20K
+1040,V162302,POST: FTF CASI/WEB: Total income amt missing - categories lt 20K
+1041,V162303,POST: FTF CASI/WEB: Total income amt missing - categories 20-40K
+1042,V162304,POST: FTF CASI/WEB: Total income amt missing - ge or lt 70K
+1043,V162305,POST: FTF CASI/WEB: Total income amt missing - categories 40-70K
+1044,V162306,POST: FTF CASI/WEB: Total income amt missing - ge or lt 100K
+1045,V162307,POST: FTF CASI/WEB: Total income amt missng - categories 70-100K
+1046,V162308,POST: FTF CASI/WEB: Total income amt missing - categories 100+K
+1047,V162309x,POST: FTF CASI/WEB: SUMMARY- Total income
+1048,V162310,POST: FTF CASI/WEB: Feeling thermometer: ASIAN-AMERICANS
+1049,V162311,POST: FTF CASI/WEB: Feeling thermometer: HISPANICS
+1050,V162312,POST: FTF CASI/WEB: Feeling thermometer: BLACKS
+1051,V162313,POST: FTF CASI/WEB: Feeling thermometer: ILLEGAL IMMIGRANTS
+1052,V162314,POST: FTF CASI/WEB: Feeling thermometer: WHITES
+1053,V162316,POST: FTF CASI/WEB: How important whites work together to change laws unfair to whites
+1054,V162317,POST: FTF CASI/WEB: How likely whites unable to find job b/c employers hire minorities
+1055,V162318,POST: FTF CASI/WEB: Federal gov treats blacks or whites better
+1056,V162319,POST: FTF CASI/WEB: How much federal gov treats blacks or whites better
+1057,V162320,POST: FTF CASI/WEB: Police treat blacks or whites better
+1058,V162321,POST: FTF CASI/WEB: How much police treat blacks or whites better
+1059,V162322,POST: FTF CASI/WEB: How much influence do whites have in U.S. politics
+1060,V162323,POST: FTF CASI/WEB: How much influence do blacks have in U.S. politics
+1061,V162324,POST: FTF CASI/WEB: How much influence do Hispanics have in U.S. politics
+1062,V162325,POST: FTF CASI/WEB: How much influence do Asian-Americans have in U.S. politics
+1063,V162326,POST: FTF CASI/WEB: How important is being Hispanic to identity
+1064,V162327,POST: FTF CASI/WEB: How important is being White to identity
+1065,V162328,POST: FTF CASI/WEB: How important is being Black to identity
+1066,V162329,POST: FTF CASI/WEB: How important is being Native American to identity
+1067,V162330,POST: FTF CASI/WEB: How important is being Asian to identity
+1068,V162331,POST: FTF CASI/WEB: How important is being Pacific Islander to identity
+1069,V162332,POST: FTF CASI/WEB: How important is being American to identity
+1070,V162333,"POST: FTF CASI/WEB: TIPI extraverted, enthusiastic"
+1071,V162334,"POST: FTF CASI/WEB: TIPI critical, quarrelsome"
+1072,V162335,"POST: FTF CASI/WEB: TIPI dependable, self-disciplined"
+1073,V162336,"POST: FTF CASI/WEB: TIPI anxious, easily upset"
+1074,V162337,POST: FTF CASI/WEB: TIPI open to new experiences
+1075,V162338,"POST: FTF CASI/WEB: TIPI reserved, quiet"
+1076,V162339,"POST: FTF CASI/WEB: TIPI sympathetic, warm"
+1077,V162340,"POST: FTF CASI/WEB: TIPI disorganized, careless"
+1078,V162341,"POST: FTF CASI/WEB: TIPI calm, emotionally stable"
+1079,V162342,"POST: FTF CASI/WEB: TIPI conventional, uncreative"
+1080,V162343,POST: FTF CASI/WEB: How hard is it for R to control temper
+1081,V162344,"POST: FTF CASI/WEB: When provoked, how likely for R to hit someone"
+1082,V162345,POST: FTF CASI/WEB: stereotype: Whites hardworking
+1083,V162346,POST: FTF CASI/WEB: Stereotype: Blacks hardworking
+1084,V162347,POST: FTF CASI/WEB: Stereotype: Hispanics hardworking
+1085,V162348,POST: FTF CASI/WEB: Stereotype: Asians hardworking
+1086,V162349,POST: FTF CASI/WEB: stereotype: Whites violent
+1087,V162350,POST: FTF CASI/WEB: Stereotype: Blacks violent
+1088,V162351,POST: FTF CASI/WEB: Stereotype: Hispanics violent
+1089,V162352,POST: FTF CASI/WEB: Stereotype: Asians violent
+1090,V162353,POST: FTF CASI/WEB: Stereotype: Muslims violent
+1091,V162354,POST: FTF CASI/WEB: Stereotype: Christians violent
+1092,V162355,POST: FTF CASI/WEB: Stereotype: Muslims patriotic
+1093,V162356,POST: FTF CASI/WEB: Stereotype: Christians patriotic
+1094,V162357,POST: FTF CASI/WEB: Discrimination in the U.S. against Blacks
+1095,V162358,POST: FTF CASI/WEB: Discrimination in the U.S. against Hispanics
+1096,V162359,POST: FTF CASI/WEB: Discrimination in the U.S. against Asian-Americans
+1097,V162360,POST: FTF CASI/WEB: Discrimination in the U.S. against Whites
+1098,V162361,POST: FTF CASI/WEB: Discrimination in the U.S. against Gays and Lesbians
+1099,V162362,POST: FTF CASI/WEB: Discrimination in the U.S. against Women
+1100,V162363,POST: FTF CASI/WEB: Discrimination in the U.S. against Men
+1101,V162364,POST: FTF CASI/WEB: Discrimination in the U.S. against Muslims
+1102,V162365,POST: FTF CASI/WEB: Discrimination in the U.S. against Christians
+1103,V162366,POST: FTF CASI/WEB: Discrimination in the U.S. against Transgender
+1104,V162367,POST: FTF CASI/WEB: How much discrimination has R faced personal
+1105,V162368,POST: FTF CASI/WEB: R rate own skintone
+1106,V162369,POST: FTF CASI/WEB: Discrimination due to skintone
+1107,V162370,POST: FTF CASI/WEB: Facebook account used recently
+1108,V162371a,POST: FTF CASI/WEB: WEB ONLY: Facebook login
+1109,V162371b,POST: FTF CASI/WEB: WEB ONLY: Facebook login reconsider
+1110,V163001a,SAMPLE: Sample location FIPS state
+1111,V163001b,SAMPLE: Sample location state postal abbreviation
+1112,V163002,SAMPLE: Sample location Congressional district (115th Congress)
+1113,V164001a,PRE ADMIN: Pre Web device logins: smartTV
+1114,V164001b,PRE ADMIN: Pre Web device logins: phone
+1115,V164001c,PRE ADMIN: Pre Web device logins: tablet
+1116,V164001d,PRE ADMIN: Pre Web device logins: desktop/laptop
+1117,V165001a,POST ADMIN: Post Web device logins: smartTV
+1118,V165001b,POST ADMIN: Post Web device logins: phone
+1119,V165001c,POST ADMIN: Post Web device logins: tablet
+1120,V165001d,POST ADMIN: Post Web device logins: desktop/laptop
+1121,V166001,RANDOM: Assignment to forward or reverse response options for selected questions
+1122,V166002,RANDOM: Assignment to ballot color/ order of major party names in vote sections
+1123,V168000,FTF ONLY: Pre IWR Obs- IWR obs module completed (after Pre-election IW)
+1124,V168001,FTF ONLY: Pre IWR OBS- Skin tone category of respondent
+1125,V168002,FTF ONLY: Pre IWR Obs- No. signs in window
+1126,V168003,FTF ONLY: RESTRICTED: Pre IWR Obs- Describe signs in window
+1127,V168004,FTF ONLY: Pre IWR Obs- No. signs outside/in front
+1128,V168005,FTF ONLY: RESTRICTED: Pre IWR Obs- Describe signs in front
+1129,V168006,FTF ONLY: Pre IWR Obs- Any sign for Dem Pres cand
+1130,V168007,FTF ONLY: Pre IWR Obs- Any sign for Rep Pres cand
+1131,V168008,FTF ONLY: Pre IWR Obs- Others present during IW 1
+1132,V168009,FTF ONLY: Pre IWR Obs- Others present during IW 2
+1133,V168010,FTF ONLY: Pre IWR Obs- Others present during IW 3
+1134,V168011,FTF ONLY: Pre IWR Obs- Others present during IW 4
+1135,V168012,FTF ONLY: Pre IWR Obs- Others present during IW 5
+1136,V168013,FTF ONLY: Pre IWR Obs- Others present during IW 6
+1137,V168014,FTF ONLY: Pre IWR Obs- Others present during IW 7
+1138,V168015,FTF ONLY: Pre IWR Obs- R cooperation
+1139,V168016,FTF ONLY: Pre IWR Obs- R level of information
+1140,V168017,FTF ONLY: Pre IWR Obs- R apparent intelligence
+1141,V168018,FTF ONLY: Pre IWR Obs- R suspicious
+1142,V168019,FTF ONLY: Pre IWR Obs- R interest in IW
+1143,V168020,FTF ONLY: Pre IWR Obs- R sincerity
+1144,V168021,FTF ONLY: Pre IWR Obs- Places where sincerity doubted
+1145,V168022,FTF ONLY: RESTRICTED: Pre IWR Obs- Where sincerity doubted
+1146,V168023,FTF ONLY: Pre IWR Obs- Estimate family income
+1147,V168024,FTF ONLY: Pre IWR Obs- Estimate R education level
+1148,V168025,FTF ONLY: RESTRICTED: Pre IWR Obs- Specify other: R education level
+1149,V168026,FTF ONLY: Pre IWR Obs- R reaction to IW 1
+1150,V168027,FTF ONLY: Pre IWR Obs- R reaction to IW 2
+1151,V168028,FTF ONLY: Pre IWR Obs- R reaction to IW 3
+1152,V168029,FTF ONLY: Pre IWR Obs- R reaction to IW 4
+1153,V168030,FTF ONLY: Pre IWR Obs- R reaction to IW 5
+1154,V168031,FTF ONLY: Pre IWR Obs- R reaction to IW 6
+1155,V168032,FTF ONLY: Pre IWR Obs- R reaction to IW 7
+1156,V168033,FTF ONLY: Pre IWR Obs- R reaction to IW 8
+1157,V168034,FTF ONLY: Pre IWR Obs- R reaction to IW 9
+1158,V168035,FTF ONLY: Pre IWR Obs- R reaction to IW 10
+1159,V168036,FTF ONLY: Pre IWR Obs- R reaction to IW 11
+1160,V168037,FTF ONLY: Pre IWR Obs- R reaction to IW 12
+1161,V168038,FTF ONLY: Pre IWR Obs- R reaction to IW 13
+1162,V168039,FTF ONLY: Pre IWR Obs- R reaction to IW 14
+1163,V168040,FTF ONLY: Pre IWR Obs- Did IWR enter any CASI answers
+1164,V168100,FTF ONLY: Post IWR Obs- IWR obs module completed (after Post-election IW)
+1165,V168101,FTF ONLY: Post IWR Obs- Skin tone category of respondent
+1166,V168102,FTF ONLY: Post IWR Obs- Others present during IW 1
+1167,V168103,FTF ONLY: Post IWR Obs- Others present during IW 2
+1168,V168104,FTF ONLY: Post IWR Obs- Others present during IW 3
+1169,V168105,FTF ONLY: Post IWR Obs- Others present during IW 4
+1170,V168106,FTF ONLY: Post IWR Obs- Others present during IW 5
+1171,V168107,FTF ONLY: Post IWR Obs- Others present during IW 6
+1172,V168108,FTF ONLY: Post IWR Obs- Others present during IW 7
+1173,V168109,FTF ONLY: Pre IWR Obs- R gender
+1174,V168110,FTF ONLY: Pre IWR Obs- Estimate R age
+1175,V168111,FTF ONLY: Post IWR Obs- R cooperation
+1176,V168112,FTF ONLY: Post IWR Obs- R level of information
+1177,V168113,FTF ONLY: Post IWR Obs- R apparent intelligence
+1178,V168114,FTF ONLY: Post IWR Obs- R suspicious
+1179,V168115,FTF ONLY: Post IWR Obs- R interest in IW
+1180,V168116,FTF ONLY: Post IWR Obs- R sincerity
+1181,V168117,FTF ONLY: Post IWR Obs- Places where sincerity doubted
+1182,V168118,FTF ONLY: RESTRICTED: POST IWR Obs- Where sincerity doubted
+1183,V168119,FTF ONLY: Post IWR Obs- R reaction to IW 1
+1184,V168120,FTF ONLY: Post IWR Obs- R reaction to IW 2
+1185,V168121,FTF ONLY: Post IWR Obs- R reaction to IW 3
+1186,V168122,FTF ONLY: Post IWR Obs- R reaction to IW 4
+1187,V168123,FTF ONLY: Post IWR Obs- R reaction to IW 5
+1188,V168124,FTF ONLY: Post IWR Obs- R reaction to IW 6
+1189,V168125,FTF ONLY: Post IWR Obs- R reaction to IW 7
+1190,V168126,FTF ONLY: Post IWR Obs- R reaction to IW 8
+1191,V168127,FTF ONLY: Post IWR Obs- R reaction to IW 9
+1192,V168128,FTF ONLY: Post IWR Obs- R reaction to IW 10
+1193,V168129,FTF ONLY: Post IWR Obs- R reaction to IW 11
+1194,V168130,FTF ONLY: Post IWR Obs- R reaction to IW 12
+1195,V168131,FTF ONLY: Post IWR Obs- R reaction to IW 13
+1196,V168132,FTF ONLY: Post IWR Obs- Did IWR enter any CASI responses
