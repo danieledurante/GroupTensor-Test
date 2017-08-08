@@ -165,7 +165,7 @@ sel_joint <- c(1,5,10,12,15)
 
 We now create the probability mass functions required to generate the data consistent with the aforementioned generative process. The **grouping variable** has been already generated in Scenario 1, and therefore do not require additional simulations.
 
-The **variables generated from independent multinomials** simply require their marginal probability mass functions to be simulated. These marginals are kept the same as in Scenario 1, with the only exception of variables 2 and 8, whose marginals now vary with groups. Hence we create now two matrices `pi_Y_0_multinom_1` and `pi_Y_0_multinom_2` containing the marginal probabilities for all the *p* variables in the two groups. Note that, consistent with the generative mechanisms for the variables simulated from the joint probability mass function, their marginals will be equal to *(0.25,0.25,0.25,0.25)*.
+The **variables generated from independent multinomials** simply require their marginal probability mass functions to be simulated. These marginals are kept the same as in Scenario 1, with the only exception of variables 2 and 8, whose marginals now vary with groups. Hence, we create now two matrices `pi_Y_0_multinom_1`, and `pi_Y_0_multinom_2`, containing the marginal probabilities for all the *p* variables in the two groups. Note that, consistent with the generative mechanism for the variables simulated from the joint probability mass function, their marginals will be equal to *(0.25,0.25,0.25,0.25)*.
 
 ``` r
 pi_Y_0_multinom_1 <- pi_Y_0_multinom
