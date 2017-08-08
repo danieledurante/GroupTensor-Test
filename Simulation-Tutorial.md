@@ -127,7 +127,7 @@ for (i in 1:n){
 for (j in 1:(length(sel_indep_multinom))){
 tensor_data[i,sel_indep_multinom[j]] <- sample(c(1:4),1,replace=TRUE,prob=pi_Y_0_multinom[sel_indep_multinom[j],])}
 
-tensor_data[i,sel_joint] <- c(vec_pi_Y_0_joint[sample(c(1:dim(vec_pi_Y_0_joint [1]),1,replace=TRUE,prob=vec_pi_Y_0_joint[,6]),1:5])}
+tensor_data[i,sel_joint] <- c(vec_pi_Y_0_joint[sample(c(1:dim(vec_pi_Y_0_joint)[1]),1,replace=TRUE,prob=vec_pi_Y_0_joint[,6]),1:5])}
 ```
 
 Finally let us **save** the simulated data in **Scenario 1**.
