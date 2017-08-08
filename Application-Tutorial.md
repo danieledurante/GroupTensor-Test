@@ -182,7 +182,7 @@ test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_mar
 save(test_marginal,file="Posterior_cramer_marginal_Application.RData")
 ```
 
-Similar steps are required to obtain the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. Hence, clean first the working directory and upload useful data and samples.
+Similar steps are required to obtain the posterior samples of the **Cramer's V coefficients for the tests on the bivariates**. Hence, clean first the working directory, and upload useful data and samples.
 
 ``` r
 rm(list=ls())
