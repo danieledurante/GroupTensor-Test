@@ -265,7 +265,8 @@ To obtain informative figures let us **introduce labels** for the different feel
 ``` r
 labels_var <- c("Clinton: angry", "Clinton: hopeful", "Clinton: afraid", "Clinton: proud", "Clinton: disgusted",
                 "Trump: angry", "Trump: hopeful", "Trump: afraid", "Trump: proud",  "Trump: disgusted",
-                "Clinton: leadership", "Clinton: cares", "Clinton: knowledgeable", "Clinton: honest", "Clinton: speaks mind",                 "Trump: leadership", "Trump: cares", "Trump: knowledgeable", "Trump: honest", "Trump: speaks mind")
+                "Clinton: leadership", "Clinton: cares", "Clinton: knowledgeable", "Clinton: honest", "Clinton: speaks mind",
+                "Trump: leadership", "Trump: cares", "Trump: knowledgeable", "Trump: honest", "Trump: speaks mind")
 ```
 
 We additionally **re-order the original variables** to provide more informative comparisons.
