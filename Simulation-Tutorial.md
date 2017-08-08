@@ -846,7 +846,7 @@ matr.dat$g1 <- (c(rep("'SCENARIO 1.  Estimated pr('~rho[jj*minute]>0.2~')'",dim(
 Bivariate <- ggplot(matr.dat, aes(X2, X1, fill = value)) +   geom_tile(color="grey") +  scale_fill_gradientn(colors=brewer.pal(9,"Greys")) +  scale_x_discrete()  +  labs(x = "", y = "") +theme_bw()+facet_wrap(~g1, labeller = label_parsed,ncol=3)+ theme(axis.text.x = element_text(size=6.5),axis.text.y = element_text(size=6.5))+ theme(legend.title=element_blank(),plot.margin=unit(c(0.1,0.1,-0.3,-0.3), "cm"),panel.background = element_rect(fill = brewer.pal(9,"Greys")[2]) )+geom_text(aes(label=flag), color="white", size=3)
 ```
 
-The `ggplot` code to reproduce the results for the **test on the marginals**—representing the uppers panels in Figure 2—is instead provided below.
+The `ggplot` code to reproduce the results for the **test on the marginals**—representing the upper panels in Figure 2—is instead provided below.
 
 ``` r
 marg_1 <- data.frame(melt(apply(cramer_marginal1[,MCMC_burn:MCMC_sample]>0.2,1,mean)))
