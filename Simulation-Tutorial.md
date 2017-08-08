@@ -105,7 +105,7 @@ tail(vec_pi_Y_0_joint)
  ## [1024,]  4  4  4  4  4 0.1000000000
 ```
 
-Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`.
+Let us now **generate the data**. First we define the number of variables `p`, and the sample size `n`.
 
 ``` r
 n <- 400
@@ -189,7 +189,7 @@ pi_Y_0_joint[4,4,4,4,4] <- 0.1
 vec_pi_Y_0_joint <- as.matrix(melt(pi_Y_0_joint))
 ```
 
-Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`.
+Let us now **generate the data**. First we define the number of variables `p`, and the sample size `n`.
 
 ``` r
 n <- 400
@@ -275,7 +275,7 @@ pi_Y_0_joint[4,4,4,4,4] <- 0.1
 vec_pi_Y_0_joint <- as.matrix(melt(pi_Y_0_joint))
 ```
 
-Let us now **generate the data**. First we define the number of variables `p` and the sample size `n`.
+Let us now **generate the data**. First we define the number of variables `p`, and the sample size `n`.
 
 ``` r
 n <- 400
