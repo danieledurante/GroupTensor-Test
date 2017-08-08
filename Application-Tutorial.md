@@ -89,16 +89,16 @@ Posterior computation under the dependent mixture of tensor factorizations requi
 
 - `Y_response`: an *nxp* matrix containing the values of the *p* categorical variables observed for the *n* units.
 - `x_predictor`: a vector with the group memberships for the *n* units.
-- `prior`: a list of the hyperparameters discussed in **Section 3.1** and the number of mixture components *H*.
+- `prior`: a list of the hyperparameters discussed in **Section 3.1**, and the number of mixture components *H*.
 - `N_sampl`: the number of MCMC samples required.
 - `seed`: a seed to ensure reproducibility.
 
 The function `gibbs_tensor()` outputs the posterior samples for the parameters of the model described in **Section 2** of the paper.
 
-Let us perform posterior inference for the application, and compute the posterior samples of the Cramer's V coefficient required for the local tests on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
+Let us **perform posterior inference for the application, and compute the posterior samples of the Cramer's V coefficient required for the local tests** on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
 
 
-To perform posterior computation set a working directory containing the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R). Once this is done, clean the work space, and upload the source functions [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R) along with useful libraries, and the data.
+To perform posterior computation set a working directory containing the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R). Once this is done, clean the workspace, and upload the source functions [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R) along with useful libraries, and the data.
 
 ``` r
 rm(list=ls())
