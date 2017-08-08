@@ -840,7 +840,7 @@ matr.dat3$X1 <- droplevels(matr.dat3$X1)
 matr.dat3$X2 <- factor(matr.dat3$X2)
 matr.dat3$flag <- cut(matr.dat3$value,breaks=c(-Inf,0.95,Inf),labels=c("","x"))
 
-matr.dat <-r bind(matr.dat1,matr.dat2,matr.dat3)
+matr.dat <-rbind(matr.dat1,matr.dat2,matr.dat3)
 matr.dat$g1 <- (c(rep("'SCENARIO 1.  Estimated pr('~rho[jj*minute]>0.2~')'",dim(matr.dat)[1]/3),rep("'SCENARIO 2.  Estimated pr('~rho[jj*minute]>0.2~')'",dim(matr.dat)[1]/3),rep("'SCENARIO 3.  Estimated pr('~rho[jj*minute]>0.2~')'",dim(matr.dat)[1]/3)))
 
 Bivariate <- ggplot(matr.dat, aes(X2, X1, fill = value)) +   geom_tile(color="grey") +  scale_fill_gradientn(colors=brewer.pal(9,"Greys")) +  scale_x_discrete()  +  labs(x = "", y = "") +theme_bw()+facet_wrap(~g1, labeller = label_parsed,ncol=3)+ theme(axis.text.x = element_text(size=6.5),axis.text.y = element_text(size=6.5))+ theme(legend.title=element_blank(),plot.margin=unit(c(0.1,0.1,-0.3,-0.3), "cm"),panel.background = element_rect(fill = brewer.pal(9,"Greys")[2]) )+geom_text(aes(label=flag), color="white", size=3)
