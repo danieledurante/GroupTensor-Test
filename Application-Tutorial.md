@@ -95,7 +95,7 @@ Posterior computation under the dependent mixture of tensor factorizations requi
 
 The function `gibbs_tensor()` outputs the posterior samples for the parameters of the model described in **Section 2** of the paper.
 
-Let us **perform posterior inference for the application, and compute the posterior samples of the Cramer's V coefficient required for the local tests** on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
+Let us **perform posterior inference for the application, and compute the posterior samples of the Cramer's V coefficients required for the local tests** on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
 
 
 To perform posterior computation set a working directory containing the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R). Once this is done, clean the workspace, and upload the source functions [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R) along with useful libraries, and the data.
@@ -121,14 +121,14 @@ a_dir_x=rep(1/length(unique(x_group)),length(unique(x_group))),
 p_H_0=0.5)
 ```
 
-Based on these settings and the data, we can now perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+Based on these settings and the data, we can now **perform posterior computation** using the function  `gibbs_tensor()`, and save the output.
 
 ``` r
 fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
 save(fit, file="Posterior_samples_Application.RData")
 ```
 
-Once the MCMC samples for the parameters of the statistical model are available, we can compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory and upload useful data and samples.
+Once the MCMC samples for the parameters of the statistical model are available, we can compute the posterior samples of the **Cramer's V coefficients for the tests on the marginals**. To do this, clean first the working directory, and upload useful data and samples.
 
 ``` r
 rm(list=ls())
@@ -175,7 +175,7 @@ for (t in 1:N_sampl){
 pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
 ```
 
-Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+Finally, compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
 
 ``` r
 test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
@@ -230,7 +230,7 @@ for (t in 1:N_sampl){
 pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
 ```
 
-Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+Finally, compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
 
 ``` r
 test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
@@ -239,7 +239,7 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Application.RData")
 
 Reproduce Figures 3 and 4 in the Paper
 --------------------------------------
-To reproduce **Figure 4** in the paper, clean first the working directory and upload useful libraries.
+To reproduce **Figure 4** in the paper, clean first the working directory, and upload useful libraries.
 
 ``` r
 rm(list=ls())
@@ -260,7 +260,7 @@ load("Political.RData")
 load("Posterior_cramer_bivariate_Application.RData")
 ```
 
-To obtain informative figures let us introduce labels for the different feelings and opinions on Hillary Clinton and Donald Trump.
+To obtain informative figures let us **introduce labels** for the different feelings and opinions on Hillary Clinton and Donald Trump.
 
 ``` r
 labels_var <- c("Clinton: angry", "Clinton: hopeful", "Clinton: afraid", "Clinton: proud", "Clinton: disgusted",
@@ -268,7 +268,7 @@ labels_var <- c("Clinton: angry", "Clinton: hopeful", "Clinton: afraid", "Clinto
                 "Clinton: leadership", "Clinton: cares", "Clinton: knowledgeable", "Clinton: honest", "Clinton: speaks mind",                 "Trump: leadership", "Trump: cares", "Trump: knowledgeable", "Trump: honest", "Trump: speaks mind")
 ```
 
-We additionally re-order the original variables to provide more informative comparisons.
+We additionally **re-order the original variables** to provide more informative comparisons.
 
 ``` r
 relable <- c(1:5,11:15,6:10,16:20)
@@ -276,7 +276,7 @@ labels_var <- labels_var[relable]
 cramer_bivariate <- test_bivariate$cramer_bivariate
 ```
 
-Let us know define a vector of indicators denoting which pairs of variables are found to change across groups according to posterior distribution of the corresponding Cramer's V coefficients.
+Let us know define a vector of **indicators denoting which pairs of variables are found to change across groups**, according to the posterior distribution of the corresponding Cramer's V coefficients.
 
 ``` r
 p <- dim(cramer_bivariate)[1]
@@ -348,7 +348,7 @@ Bivariate
 ```
 ![](https://github.com/danieledurante/GroupTensor-Test/blob/master/Images/figu_app.jpg)
 
-To obtain **Figure 3** in the paper, we require the posterior distributions of the probability mass functions for the *p* in each of the two groups of voters. These posterior samples associated with these quantities are stored in `Posterior_cramer_marginal_Application.RData`. Hence load these samples and set useful quantities.
+To obtain **Figure 3** in the paper, we require the posterior distributions of the probability mass functions for the *p* in each of the two groups of voters. The posterior samples associated with these quantities are stored in `Posterior_cramer_marginal_Application.RData`. Hence, load these samples, and set useful quantities.
 
 ``` r
 load("Posterior_cramer_marginal_Application.RData")
