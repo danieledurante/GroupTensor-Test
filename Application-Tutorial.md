@@ -106,7 +106,7 @@ library(gtools)
 source("Core_Functions.R")
 
 load("Political.RData")
-tensor_data < -matrix(0,dim(tensor_dat)[1],dim(tensor_dat)[2])
+tensor_data <- matrix(0,dim(tensor_dat)[1],dim(tensor_dat)[2])
 for (j in 1:dim(tensor_dat)[2]){
 tensor_data[,j] <- c((tensor_dat[,j]))}
 x_group <- c(response)
