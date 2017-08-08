@@ -86,11 +86,13 @@ save(tensor_dat,response,file = 'Political.RData')
 Perform Posterior Inference
 --------------------------------------
 Posterior computation under the dependent mixture of tensor factorizations requires the function `gibbs_tensor()` in the source file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R). This function implements the Gibbs sampler described in **Algorithm 1** of the paper, taking as inputs:
+
 - `Y_response`: an *nxp* matrix containing the values of the *p* categorical variables observed for the *n* units.
 - `x_predictor`: a vector with the group memberships for the *n* units.
 - `prior_model`: a list of the hyperparameters discussed in **Section 3.1** and the number of mixture components *H*.
 - `N_sampl`: the number of MCMC samples required.
 - `seed`: a seed to ensure reproducibility.
+
 The function `gibbs_tensor()` outputs the posterior samples for the parameters of the model described in **Section 2** of the paper.
 
 Let us perform posterior inference for the application, and compute the posterior samples of the Cramer's V coefficient required for the local tests on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
