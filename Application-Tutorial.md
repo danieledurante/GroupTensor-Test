@@ -30,7 +30,7 @@ names(dati) <- variable_names$`X.1`
 ```
 Note that when uploading the data, a warning appears. However this warning is related to a variable which is not considered in this application.
 
-The dataframe `dati` contain a massive amount of information and observed items. In our motivating application, the variable defining the **group membership—i.e. the voting preferences at the Presidential primaries—is the variable 49**. The multivariate categorical data on the **voters feelings and opinions for Hillary Clinton and Donald Trump, are instead found in the variables from 160 to 169, and 217 to 226**. Let us create a dataset having only these variables.
+The dataframe `dati` contains a massive amount of information, and observed items. In our motivating application, the variable defining the **group membership—i.e. the voting preferences at the Presidential primaries—is the variable 49**. The multivariate categorical data on the **voters feelings and opinions for Hillary Clinton and Donald Trump, are instead found in the variables from 160 to 169, and 217 to 226**. Let us create a dataset having only these variables.
    
 ``` r
 group_variable <- 49
