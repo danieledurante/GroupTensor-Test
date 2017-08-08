@@ -277,7 +277,7 @@ labels_var <- labels_var[relable]
 cramer_bivariate <- test_bivariate$cramer_bivariate
 ```
 
-Let us know define a vector of **indicators denoting which pairs of variables are found to change across groups**, according to the posterior distribution of the corresponding Cramer's V coefficients.
+Let us now define a vector of **indicators denoting which pairs of variables are found to change across groups**, according to the posterior distribution of the corresponding Cramer's V coefficients.
 
 ``` r
 p <- dim(cramer_bivariate)[1]
