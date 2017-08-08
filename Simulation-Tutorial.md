@@ -395,7 +395,7 @@ for (t in 1:N_sampl){
 pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
 ```
 
-Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+Finally, compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
 
 ``` r
 test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
@@ -453,7 +453,7 @@ for (t in 1:N_sampl){
 pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
 ```
 
-Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+Finally, compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
 
 ``` r
 test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
@@ -539,7 +539,7 @@ for (t in 1:N_sampl){
 pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
 ```
 
-Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+Finally, compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
 
 ``` r
 test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
@@ -597,7 +597,7 @@ for (t in 1:N_sampl){
 pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
 ```
 
-Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+Finally, compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
 
 ``` r
 test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
@@ -683,7 +683,7 @@ for (t in 1:N_sampl){
 pi_y_marg[,,t] <- pi_x[1,t]*pi_y_1[,,t]+pi_x[2,t]*pi_y_2[,,t]}
 ```
 
-Finally compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
+Finally, compute the posterior samples of the Cramer's V coefficients for the tests on the marginals, and save them along with other useful quantities.
 
 ``` r
 test_marginal <- cramer_marginals(pi_y_group1=pi_y_1,pi_y_group2=pi_y_2,pi_y_marginal=pi_y_marg,pi_x_predictor=pi_x)
@@ -741,7 +741,7 @@ for (t in 1:N_sampl){
 pi_y_biv[,,,,t] <- pi_x[1,t]*pi_y_biv_1[,,,,t]+pi_x[2,t]*pi_y_biv_2[,,,,t]}
 ```
 
-Finally compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
+Finally, compute the posterior samples of the Cramer's V coefficients for the tests on the bivariates, and save them along with other useful quantities.
 
 ``` r
 test_bivariate <- cramer_bivariates(pi_y_biv_group1=pi_y_biv_1,pi_y_biv_group2=pi_y_biv_2,pi_y_biv_marginal=pi_y_biv,pi_x_predictor=pi_x)
