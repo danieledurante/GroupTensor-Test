@@ -195,6 +195,7 @@ load("Posterior_samples_Application.RData")
 As shown in equation (8) in **Section 2.1** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the bivariates, we need to compute several functionals of our model. To do this, run the code below.
 
 ``` r
+################################################################################
 #DEFINE USEFUL DIMENSIONS
 N_sampl <- dim(fit$pi_y_post)[4]
 H <- dim(fit$pi_y_post)[3]
