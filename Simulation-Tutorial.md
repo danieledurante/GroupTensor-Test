@@ -464,7 +464,7 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Scenario1.RData")
 ### Scenario 2
 Posterior computation, and calculation of the posterior samples for the Cramer's V coefficients for the local tests proceed as in Scenario 1 above. Therefore:
 
-Clean workspace, and upload source functions and data.
+Clean workspace, and **upload source functions and data**.
 
 ``` r
 rm(list=ls())
@@ -474,7 +474,7 @@ source("Core_Functions.R")
 load("Scenario2.RData")
 ```
 
-Set the hyperparameters.
+Set the **hyperparameters**.
 
 ``` r
 prior_model <- list(H=20, 
@@ -483,7 +483,7 @@ a_dir_x=rep(1/length(unique(x_group)),length(unique(x_group))),
 p_H_0=0.5)
 ```
 
-Perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+**Perform posterior computation** using the function  `gibbs_tensor()`, and save the output.
 
 ``` r
 fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
@@ -608,7 +608,7 @@ save(test_bivariate,file="Posterior_cramer_bivariate_Scenario2.RData")
 ### Scenario 3
 Posterior computation, and calculation of the posterior samples for the Cramer's V coefficients for the local tests proceed as in Scenario 1 above. Therefore:
 
-Clean workspace, and upload source functions and data.
+Clean workspace, and **upload source functions and data**.
 
 ``` r
 rm(list=ls())
@@ -618,7 +618,7 @@ source("Core_Functions.R")
 load("Scenario3.RData")
 ```
 
-Set the hyperparameters.
+Set the **hyperparameters**.
 
 ``` r
 prior_model <- list(H=20, 
@@ -627,7 +627,7 @@ a_dir_x=rep(1/length(unique(x_group)),length(unique(x_group))),
 p_H_0=0.5)
 ```
 
-Perform posterior computation using the function  `gibbs_tensor()`, and save the output.
+**Perform posterior computation** using the function  `gibbs_tensor()`, and save the output.
 
 ``` r
 fit <- gibbs_tensor(Y_response=tensor_data,x_predictor=x_group,prior=prior_model,N_sampl=5000,seed=123)
