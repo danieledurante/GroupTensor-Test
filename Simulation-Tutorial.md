@@ -314,9 +314,9 @@ Posterior computation under the dependent mixture of tensor factorizations requi
 - `N_sampl`: the number of MCMC samples required.
 - `seed`: a seed to ensure reproducibility.
 
-The function `gibbs_tensor()` outputs the posterior samples for the parameters of the model described in **Section 2** of the paper.
+The function `gibbs_tensor()` outputs the posterior samples for the parameters of the model described in **Section 2.1** of the paper.
 
-Let us **perform posterior inference for the three simulations, and compute the posterior samples of the Cramer's V coefficients** required for the local tests on the marginals and the bivariates—see Section 2.1 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
+Let us **perform posterior inference for the three simulations, and compute the posterior samples of the Cramer's V coefficients** required for the local tests on the marginals and the bivariates—see Section 2.2 in the paper. To do this we will use the functions `cramer_marginals()` and `cramer_bivariates()` in the file [`Core_Functions.R`](https://github.com/danieledurante/GroupTensor-Test/blob/master/Core_Functions.R), and described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file.
 
 -----------
 ### Scenario 1
@@ -356,7 +356,7 @@ load("Scenario1.RData")
 load("Posterior_samples_Scenario1.RData")
 ```
 
-As shown in equation (7) in **Section 2.1** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the marginals, we need to compute several functionals of our model. To do this, run the code below.
+As shown in equation (7) in **Section 2.2** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the marginals, we need to compute several functionals of our model. To do this, run the code below.
 
 ``` r
 ################################################################################
@@ -412,7 +412,7 @@ load("Scenario1.RData")
 load("Posterior_samples_Scenario1.RData")
 ```
 
-As shown in equation (8) in **Section 2.1** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the bivariates, we need to compute several functionals of our model. To do this, run the code below.
+As shown in equation (8) in **Section 2.2** of the paper, to obtain the posterior samples of the Cramer's V coefficients for the tests on the bivariates, we need to compute several functionals of our model. To do this, run the code below.
 
 ``` r
 ################################################################################
