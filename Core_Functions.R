@@ -46,7 +46,7 @@ n_x<-c(table(x_group))
 H<-prior$H
 
 #-----------------------------------------------------------------------------#
-#Conditional mixing probabilities
+#Hyperparameters for the conditional mixing probabilities
 a_dir_nu<-rep(1/H,H)
 
 #-----------------------------------------------------------------------------#
@@ -58,7 +58,7 @@ a_dir_y<-prior$a_dir_y
 a_dir_x<-prior$a_dir_x
 
 #-----------------------------------------------------------------------------#
-#Null hypothesis
+#Prior probability of the null hypothesis
 p_H_O<-prior$p_H_0
 
 
