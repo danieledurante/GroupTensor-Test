@@ -4,7 +4,7 @@ Daniele Durante
 
 Description
 -----------
-As described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file, this tutorial contains general guidelines and code to perform the analyses for the [ANES](http://electionstudies.org/studypages/anes_timeseries_2016/anes_timeseries_2016.htm) application in **Section 5** of the paper. In particular, we provide information on how to **download and clean the data**, detailed **R code to perform posterior inference and testing** under the proposed dependent mixture of tensor factorizations, and **guidelines to reproduce Figure 3 and 4** in the paper.
+As described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file, this tutorial contains general guidelines and code to perform the analyses for the [ANES](http://electionstudies.org/studypages/anes_timeseries_2016/anes_timeseries_2016.htm) application in **Section 5** of the paper. In particular, we provide information on how to **download and clean the data**, detailed **R code to perform posterior inference and testing** under the proposed dependent mixture of tensor factorizations and **guidelines to reproduce Figure 3 and 4** in the paper.
 
 Upload and Clean the Data from the ANES
 --------------------------------------
