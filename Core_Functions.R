@@ -344,6 +344,7 @@ for (j_2 in 1:(j_1-1)){
 cramer_bivariate[j_1,j_2,t]<-sqrt(pi_x[1,t]*sum((c(pi_y_biv_1[j_1,j_2,,,t])-c(pi_y_biv[j_1,j_2,,,t]))^2/(c(pi_y_biv[j_1,j_2,,,t])))+pi_x[2,t]*sum((c(pi_y_biv_2[j_1,j_2,,,t])-c(pi_y_biv[j_1,j_2,,,t]))^2/(c(pi_y_biv[j_1,j_2,,,t]))))}}
 
 ###############################################################################	
+#PRINT THE NUMBER OF ITERATIONS		
 if (t%%25 == 0){ 
 cat(paste("Iteration:", t,"\n",sep = ""))}}
 
