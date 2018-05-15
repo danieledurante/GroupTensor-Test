@@ -4,7 +4,7 @@ Daniele Durante
 
 Description
 -----------
-As described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file, this tutorial contains the general guidelines and code to reproduce the simulation studies considered in **Section 4** of the paper. In particular, we provide information on how to **simulate the data**, detailed `R` code to **perform posterior inference and testing** under the proposed dependent mixture of tensor factorizations, and guidelines to **reproduce Figure 2 in the paper**.
+As described in the [`README.md`](https://github.com/danieledurante/GroupTensor-Test/blob/master/README.md) file, this tutorial contains the general guidelines and code to reproduce the simulation studies considered in **Section 4** of the paper. In particular, we provide information on how to **simulate the data**, detailed `R` code to **perform posterior inference and testing** under the proposed dependent mixture of tensor factorizations and guidelines to **reproduce Figure 2 in the paper**.
 
 Simulate the Data under the Three Scenarios in the Paper
 --------------------------------------
