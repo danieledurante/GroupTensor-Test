@@ -1,7 +1,7 @@
 # GroupTensor-Test: Bayesian inference on group differences in multivariate categorical data
 
 
-This repository is associated with the paper [Russo M., Durante D. and Scarpa B. (2018). *Bayesian inference on group differences in multivariate categorical data*. *Computational Statistics & Data Analysis*, 126, 136-149](https://doi.org/10.1016/j.csda.2018.04.010), and aims at providing detailed materials to reproduce the main analyses in the paper. 
+This repository is associated with the paper [Russo M., Durante D. and Scarpa B. (2018). **Bayesian inference on group differences in multivariate categorical data**. *Computational Statistics & Data Analysis*, 126, 136-149](https://doi.org/10.1016/j.csda.2018.04.010), and aims at providing detailed materials to reproduce the main analyses in the paper. 
 
 The documentation is organized in two main sections described below.  
 
